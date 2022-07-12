@@ -1,0 +1,16 @@
+=== 通过 body 取数据
+:paramSourceDir:  ../../main/java/com/github/spring/boot/param/controller
+
+一般用于 POST/PUT/DELETE 请求
+
+
+[source,java]
+----
+include::{paramSourceDir}/PathVariableController.java[lines=15..29]
+----
+
+
+[source,httprequest]
+----
+include::request/01-param-body.http[]
+----

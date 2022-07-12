@@ -1,0 +1,14 @@
+=== resource 注入
+
+:iocSourceDir: ../../main/java/com/github/spring/boot/ioc/controller
+
+依赖注入一共有两种方式
+
+
+[source,java]
+----
+include::{iocSourceDir}/ResourceController.java[lines=18..30]
+----
+
+
+

@@ -1,0 +1,13 @@
+=== 依赖查找
+:iocSourceDir: ../../main/java/com/github/spring/boot/ioc/controller
+
+
+[source,java]
+----
+include::{iocSourceDir}/StrategyController.java[lines=19..30]
+----
+
+
+
+
+

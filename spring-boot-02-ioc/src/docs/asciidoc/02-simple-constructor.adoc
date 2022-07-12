@@ -1,0 +1,17 @@
+=== 构造方法注入
+
+:iocSourceDir: ../../main/java/com/github/spring/boot/ioc/controller
+
+依赖注入一共有两种方式
+
+
+[source,java]
+----
+include::{iocSourceDir}/ConstructorController.java[lines=16..27]
+----
+
+
+
+
+
+

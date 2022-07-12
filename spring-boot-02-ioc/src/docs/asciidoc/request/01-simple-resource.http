@@ -1,0 +1,19 @@
+POST http://localhost:8080/simple/chinaMobile
+Content-Type: application/json
+
+{
+  "mobile": "18888888888",
+  "message": "hello chinaMobile"
+}
+
+###
+
+POST http://localhost:8080/simple/chinaTelecom
+Content-Type: application/json
+
+{
+  "mobile": "18888888888",
+  "message": "hello chinaTelecom"
+}
+
+###

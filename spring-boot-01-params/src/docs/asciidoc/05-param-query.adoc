@@ -1,0 +1,12 @@
+=== 从 url 后面获取数据
+:paramSourceDir:  ../../main/java/com/github/spring/boot/param/controller
+
+[source,java]
+----
+include::{paramSourceDir}/RequestQueryController.java[lines=14..22]
+----
+
+[source,httprequest]
+----
+include::request/05-param-query.http[]
+----

@@ -1,0 +1,12 @@
+== 依赖注入
+:doctype: book
+:sourcedir: src/docs/asciidoc
+:numbered:
+
+include::{sourcedir}/01-simple-resource.adoc[]
+
+include::{sourcedir}/02-simple-constructor.adoc[]
+
+include::{sourcedir}/03-strategy.adoc[]
+
+

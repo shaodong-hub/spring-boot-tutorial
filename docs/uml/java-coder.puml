@@ -1,0 +1,133 @@
+@startmindmap
+'https://plantuml.com/mindmap-diagram
+<style>
+mindmapDiagram {
+  .green {
+    BackgroundColor lightgreen
+  }
+  .rose {
+    BackgroundColor #FFBBCC
+  }
+  .blue {
+    BackgroundColor lightblue
+  }
+}
+</style>
+caption Java 后端研发能力图谱
+title Java 后端研发能力图谱
+
+* Java 后端研发能力图谱
+
+** SpringBoot <<green>>
+
+*** SpringBoot 基础篇 <<green>>
+**** SpringBoot 参数绑定 <<green>>
+**** Spring IOC 与 AOP <<green>>
+**** SpringBoot 自动配置特性 <<green>>
+**** Spring & SpringBoot 常用注解 <<green>>
+**** 使用 Lombok 简化开发 <<green>>
+**** CommandLineRunner 与 ApplicationRunner <<green>>
+
+*** SpringBoot 进阶篇  <<green>>
+**** SpringBoot 参数转换 <<green>>
+**** SpringBoot 参数校验 <<green>>
+**** SpringBoot 事件发布 <<green>>
+**** SpringBoot 异常处理 <<green>>
+**** SpringBoot 依赖查找 <<green>>
+**** SpringBoot 定时时任务 <<green>>
+
+*** SpringBoot 工具篇 <<green>>
+
+**** Spring 基于注解的事务配置 <<green>>
+**** SpringBoot 与 logback 集成 <<green>>
+**** SpringBoot 重试机制 <<green>>
+**** SpringBoot 异步 <<green>>
+**** SpringBoot 健康检查 <<green>>
+**** SpringBoot 打包及部署 <<green>>
+**** SpringBoot 缓存注解 <<green>>
+
+*** SpringBoot 其他的注意事项 <<rose>>
+**** 默认注入ObjectMapper <<rose>>
+**** 依赖查找 <<rose>>
+**** ObjectProvide <<rose>>
+**** ServletStream 只能读一次 <<rose>>
+**** 日志打印 debug 也会执行 <<rose>>
+**** Controller 中public 与 default 方法 <<rose>>
+
+** SpringCloud <<green>>
+*** SpringBootOpenFeign <<green>>
+
+** SpringBoot 单元测试 <<green>>
+*** Junit5 入门 <<green>>
+*** Spring Security模拟登陆 <<green>>
+*** Mock Kafka <<green>>
+*** Mock远程接口调用 <<green>>
+*** 其他常用的工具 <<green>>
+
+** SpringBoot 高级篇 <<rose>>
+*** 高级类的注解 @AutoConfigureAfter or @AutoConfigureBefore @Conditional <<rose>>
+*** springboot 配置加载的优先级 <<rose>>
+*** SpringBootStarter 原理 & 实现 <<blue>>
+
+-- 开发工具 <<green>>
+--- SpringBoot工程初始化 <<green>>
+--- IDEA http 请求工具 <<green>>
+--- docker 工具 <<green>>
+--- K8S 的管理工具 <<green>>
+--- 本地 DEBUG <<green>>
+--- 远程 DEBUG <<green>>
+
+-- 中间件 <<green>>
+--- Redis <<green>>
+---- 数据结构及其使用场景 <<green>>
+---- 部署模式及其使用场景 <<green>>
+---- 持久化过程 <<rose>>
+---- 缓存三个问题及其解决办法(穿透,击穿,雪崩) <<green>>
+---- 内存管理(淘汰算法&删除策略) <<rose>>
+---- Redis LUA脚本编写 <<rose>>
+---- SpringBoot 与 Redis 集成 <<green>>
+
+--- MySQL(InnoDB) <<green>>
+---- 索引结构 <<green>>
+---- 索引失效的几种场景 <<green>>
+---- 存储结构 <<green>>
+---- 锁与事物隔离级别 <<green>>
+---- SpringBoot 与 MySQL 集成 <<green>>
+
+--- Kafka <<green>>
+---- 消息的生产/消费过程 <<green>>
+---- kafka的可靠性与一致性 <<rose>>
+---- Kafka幂等性原理 <<rose>>
+---- Kafka再平衡机制 <<green>>
+---- SpringBoot 与 Kafka 集成 <<green>>
+
+-- 设计思想 <<blue>>
+--- 设计模式 <<blue>>
+---- 创建型(5个) <<blue>>
+---- 结构型(7个) <<blue>>
+---- 行为型(11个) <<blue>>
+
+--- DDD 领域驱动设计 <<blue>>
+---- DDD 战略设计 <<blue>>
+---- DDD 战术设计 <<blue>>
+---- DDD 核心概念 <<blue>>
+---- DDD 微服务落地实战 <<blue>>
+
+-- 扩展 <<blue>>
+--- SpringBoot 是如何跑起来的？<<blue>>
+--- SpringBoot 扩展点有哪些? <<blue>>
+--- 网络是如何跑起来的？ <<blue>>
+
+
+
+header
+My super header
+endheader
+
+center footer My super footer
+
+legend right
+  Short
+  legend
+endlegend
+@endmindmap

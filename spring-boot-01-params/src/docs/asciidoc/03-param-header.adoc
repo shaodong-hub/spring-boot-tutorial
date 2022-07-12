@@ -1,0 +1,17 @@
+=== 从 header 中获取数据
+:paramSourceDir:  ../../main/java/com/github/spring/boot/param/controller
+
+[source,java]
+----
+include::{paramSourceDir}/RequestHeaderController.java[lines=13..21]
+----
+
+
+
+[source,httprequest]
+----
+include::request/03-param-header.http[]
+----
+
+
+
