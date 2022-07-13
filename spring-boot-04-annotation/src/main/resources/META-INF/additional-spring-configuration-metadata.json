@@ -1,0 +1,12 @@
+{
+  "properties": [
+    {
+      "name": "com.github.property.username",
+      "defaultValue": ""
+    },
+    {
+      "name": "com.github.property.password",
+      "defaultValue": ""
+    }
+  ]
+}

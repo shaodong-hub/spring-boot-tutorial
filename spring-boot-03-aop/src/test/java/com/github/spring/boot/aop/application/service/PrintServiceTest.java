@@ -1,7 +1,7 @@
 package com.github.spring.boot.aop.application.service;
 
-import com.github.spring.boot.aop.application.DivCommand;
 import com.github.spring.boot.aop.application.ArgsCommand;
+import com.github.spring.boot.aop.application.DivCommand;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,8 @@
 package com.github.spring.boot.annotation;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * create in 2022/7/13 22:37
  *
