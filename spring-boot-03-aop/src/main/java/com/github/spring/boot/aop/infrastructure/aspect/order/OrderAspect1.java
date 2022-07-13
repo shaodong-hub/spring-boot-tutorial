@@ -1,4 +1,4 @@
-package com.github.spring.boot.aop.service.infrastructure.aspect.order;
+package com.github.spring.boot.aop.infrastructure.aspect.order;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -18,8 +18,7 @@ import java.util.Arrays;
 @Slf4j
 @Aspect
 @Component
-public class OrderAspect2 {
-
+public class OrderAspect1 {
     /**
      * 抽取公共的切入点表达式
      * 1.本类的引用
@@ -38,9 +37,8 @@ public class OrderAspect2 {
      */
     @Around(value = "pointCut()")
     public Object logAround(ProceedingJoinPoint pdj) throws Throwable {
-        log.info("OrderAspect - 2 - logAround...运行...参数列表是:{}", Arrays.asList(pdj.getArgs()));
+        log.info("OrderAspect - 1 - logAround...运行...参数列表是:{}", Arrays.asList(pdj.getArgs()));
         return pdj.proceed();
     }
-
 
 }

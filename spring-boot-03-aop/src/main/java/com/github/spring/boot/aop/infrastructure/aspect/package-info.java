@@ -4,4 +4,4 @@
  * @author shishaodong
  * @version 0.0.1
  */
-package com.github.spring.boot.aop.service.infrastructure.aspect;
+package com.github.spring.boot.aop.infrastructure.aspect;

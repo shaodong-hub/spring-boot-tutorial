@@ -1,8 +1,8 @@
-package com.github.spring.boot.aop.service.application.service;
+package com.github.spring.boot.aop.application.service;
 
-import com.github.spring.boot.aop.service.application.ArgsCommand;
-import com.github.spring.boot.aop.service.application.DivCommand;
-import com.github.spring.boot.aop.service.infrastructure.annotation.Print;
+import com.github.spring.boot.aop.application.ArgsCommand;
+import com.github.spring.boot.aop.application.DivCommand;
+import com.github.spring.boot.aop.infrastructure.annotation.Print;
 import org.springframework.stereotype.Service;
 
 /**

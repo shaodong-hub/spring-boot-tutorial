@@ -1,4 +1,4 @@
-package com.github.spring.boot.aop.service.application;
+package com.github.spring.boot.aop.application;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

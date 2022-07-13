@@ -1,6 +1,6 @@
-package com.github.spring.boot.aop.service.infrastructure.aspect;
+package com.github.spring.boot.aop.infrastructure.aspect;
 
-import com.github.spring.boot.aop.service.infrastructure.annotation.Print;
+import com.github.spring.boot.aop.infrastructure.annotation.Print;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

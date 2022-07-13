@@ -16,6 +16,7 @@
         <module>spring-boot-01-params</module>
         <module>spring-boot-02-ioc</module>
         <module>spring-boot-03-aop</module>
+        <module>spring-boot-04-annotation</module>
     </modules>
 
     <properties>

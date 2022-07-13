@@ -1,4 +1,4 @@
-package com.github.spring.boot.aop.service.infrastructure.annotation;
+package com.github.spring.boot.aop.infrastructure.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
