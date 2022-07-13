@@ -5,6 +5,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -16,6 +17,7 @@ import java.util.Arrays;
  * @version 0.0.1
  */
 @Slf4j
+@Order(1)
 @Aspect
 @Component
 public class OrderAspect3 {
@@ -25,7 +27,7 @@ public class OrderAspect3 {
      * 1.本类的引用
      * 2.其他的切面引用
      */
-    @Pointcut("execution(* com.github.spring.boot.aop.service.application.service.*.*(..))")
+    @Pointcut("execution(* com.github.spring.boot.aop.application.service.*.*(..))")
     public void pointCut() {
     }
 

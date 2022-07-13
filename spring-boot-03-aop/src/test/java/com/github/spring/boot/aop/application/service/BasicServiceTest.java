@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  */
 @SpringBootTest
 @DisplayName("测试除法")
-class DivServiceTest {
+class BasicServiceTest {
 
     @Resource
     private DivService service;

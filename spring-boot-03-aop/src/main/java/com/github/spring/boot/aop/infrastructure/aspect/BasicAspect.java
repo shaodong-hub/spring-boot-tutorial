@@ -23,14 +23,14 @@ import java.util.Arrays;
 @Slf4j
 @Aspect
 @Component
-public class DivAspect {
+public class BasicAspect {
 
     /**
      * 抽取公共的切入点表达式
      * 1.本类的引用
      * 2.其他的切面引用
      */
-    @Pointcut("execution(* com.github.spring.boot.aop.service.application.service.*.*(..))")
+    @Pointcut("execution(* com.github.spring.boot.aop.application.service.*.*(..))")
     public void pointCut() {
     }
 
@@ -68,10 +68,11 @@ public class DivAspect {
     /**
      * 异常通知:在目标方法运行出现异常通知
      *
+     * @param joinPoint joinPoint
      * @param exception 异常
      */
     @AfterThrowing(value = "pointCut()", throwing = "exception")
-    public void logThrown(Exception exception) {
+    public void logThrown(JoinPoint joinPoint, Exception exception) {
         log.info("logThrown...");
     }
 

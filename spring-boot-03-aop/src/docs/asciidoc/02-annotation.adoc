@@ -1,0 +1,11 @@
+=== 自定义注解
+
+:aopSourceDir: ../../main/java/com/github/spring/boot/aop/infrastructure/aspect
+
+
+[source,java]
+----
+include::{aopSourceDir}/PrintAspect.java[lines=17..92]
+----
+
+
