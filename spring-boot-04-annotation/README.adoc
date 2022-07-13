@@ -1,5 +1,14 @@
 == 一些注解
+:doctype: book
+:sourcedir: src/docs/asciidoc
+:numbered:
 
 
 
+include::{sourcedir}/01-configuration.adoc[]
 
+include::{sourcedir}/02-primary.adoc[]
+
+include::{sourcedir}/03-configurationproperties.adoc[]
+
+include::{sourcedir}/04-profile.adoc[]

@@ -5,4 +5,10 @@
 
 
 
+include::{sourcedir}/01-base.adoc[]
 
+include::{sourcedir}/02-annotation.adoc[]
+
+include::{sourcedir}/03-args.adoc[]
+
+include::{sourcedir}/04-order.adoc[]

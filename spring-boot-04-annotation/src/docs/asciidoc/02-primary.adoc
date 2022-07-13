@@ -1,0 +1,3 @@
+=== Primary
+
+:aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/aspect
