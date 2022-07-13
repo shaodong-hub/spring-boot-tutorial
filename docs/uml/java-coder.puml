@@ -49,7 +49,7 @@ title Java 后端研发能力图谱
 *** SpringBoot 其他的注意事项 <<rose>>
 **** 默认注入ObjectMapper <<rose>>
 **** 依赖查找 <<rose>>
-**** ObjectProvide <<rose>>
+**** ObjectProvider <<rose>>
 **** ServletStream 只能读一次 <<rose>>
 **** 日志打印 debug 也会执行 <<rose>>
 **** Controller 中public 与 default 方法 <<rose>>
