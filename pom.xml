@@ -17,6 +17,8 @@
         <module>spring-boot-02-ioc</module>
         <module>spring-boot-03-aop</module>
         <module>spring-boot-04-annotation</module>
+        <module>spring-boot-06-jackson</module>
+
     </modules>
 
     <properties>
