@@ -12,20 +12,20 @@ image::http_request.png[]
 
 [source,http request]
 ----
-POST /authen/ops/common/user HTTP/1.1
+POST /ops/common/user HTTP/1.1
 Cookie: SESSION=ZWVmYjNjMDctNzI1Yy00MWZhLTg0NjktMWE2Y2E0NmJmNjU0
 Content-Type: application/json
 User-Agent: PostmanRuntime/7.29.0
 Accept: */*
 Postman-Token: 8587061f-8a5f-44c1-8360-fd9b89773c19
-Host: authen-app.xip.io
+Host: app.xip.io
 Accept-Encoding: gzip, deflate, br
 Content-Length: 110
 Connection: keep-alive
 
 {
-  "username": "qwer234227",
-  "mobile": "18867110336",
+  "username": "qwer1234",
+  "mobile": "18812345678",
   "activeTime": 5,
   "businessId": 97,
   "note": ""
@@ -54,6 +54,12 @@ Connection: keep-alive
 
 {"status":"FAILURE","code":408,"message":"会话过期，请重新登录！","data":null}
 ----
+
+=== Chrome 浏览器查看请求
+image::Jul-27-2022 00-23-30.gif[]
+
+=== 命令行发出 HTTP 请求
+image::Jul-27-2022 00-37-08.gif[]
 
 === 状态码
 2xx:成功
