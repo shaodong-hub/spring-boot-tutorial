@@ -3,10 +3,10 @@
 :aopSourceDir: ../../main/java/com/github/spring/boot/aop/infrastructure/aspect
 
 
-
+****
 [source,java]
 ----
 include::{aopSourceDir}/BasicAspect.java[lines=23..92]
 ----
-
+****
 

@@ -3,6 +3,14 @@
 :sourcedir: src/docs/asciidoc
 :numbered:
 
+AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期间动态代理实现程序功能的统一维护的一种技术(装饰器模式区别).
+
+AOP主要是提供另外一种编程思路，可以把类似的行为抽离出来统一处理.
+
+例如:Aspect(`@Aspect`), 事务(`@Transaction`), 异步(`@Async`), 重试机制(`@Retry`)
+
+
+image:aop.jpg[]
 
 
 include::{sourcedir}/01-base.adoc[]
@@ -12,3 +20,11 @@ include::{sourcedir}/02-annotation.adoc[]
 include::{sourcedir}/03-args.adoc[]
 
 include::{sourcedir}/04-order.adoc[]
+
+
+
+=== 失效的场景
+
+image::aop_not_work.jpg[]
+
+

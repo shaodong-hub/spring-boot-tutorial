@@ -32,4 +32,5 @@ public class PrintService {
         return 100 / command.getNumber();
     }
 
+
 }
