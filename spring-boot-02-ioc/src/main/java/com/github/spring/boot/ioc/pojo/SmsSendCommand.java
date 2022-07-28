@@ -11,6 +11,8 @@ import lombok.Data;
 @Data
 public class SmsSendCommand {
 
+    private String type;
+
     private String mobile;
 
     private String message;

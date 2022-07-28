@@ -1,0 +1,9 @@
+POST http://localhost:8088/body
+Content-Type: application/json
+Accept: application/xml
+
+{
+  "username": "test_name",
+  "age": 18
+}
+

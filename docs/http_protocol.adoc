@@ -61,14 +61,57 @@ image::Jul-27-2022 00-23-30.gif[]
 === 命令行发出 HTTP 请求
 image::Jul-27-2022 00-37-08.gif[]
 
+=== header 常见参数
+
+|===
+|类型 |关键字 |说明
+
+|请求头
+|accept
+|表示可以接受的文件类型
+
+|请求头
+|accept-encoding
+|表示当前浏览器可以接受的数据编码，如果服务器吐出的数据不是浏览器可接受的编码
+
+|请求头
+|Cookie
+|很多和用户相关的信息都存在 Cookie 里，用户在向服务器发送请求数据时会带上
+
+|请求头
+|user-agent
+|表示浏览器的版本信息。
+
+|请求头
+|content-encoding
+|表示返回内容的压缩编码类型，如“Content-Encoding :gzip”表示这次回包是以 gzip 格式压缩编码的，这种压缩格式可以减少流量的消耗。
+
+|请求头
+|Authorization
+|授权信息
+
+|请求头
+|content-type
+|表示后面的文档属于什么MIME类型
+
+|请求头
+|Referer
+|包含一个URL，用户从该URL代表的页面出发访问当前请求的页面
+
+|响应头
+|content-type
+|表示后面的文档属于什么MIME类型
+
+|响应头
+|set-cookie
+|知道这是服务器给的身份标识，于是就保存起来，下次再请求的时候就自动把这个值放进 Cookie 字段里发给服务器
+|===
+
 === 状态码
 2xx:成功
 3xx:重定向
 4xx:客户端错误
 5xx:服务器错误
-
-
-
 
 
 
@@ -123,6 +166,13 @@ GET和POST还有一个重大区别，简单的说： GET产生一个TCP数据包
 3. 并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。 现在，当面试官再问你“GET与POST的区别”的时候，你的内心是不是这样的？
 
 
+=== http协议是无状态的
 
+每个请求都是完全独立的，每个请求包含了处理这个请求所需的完整的数据，发送请求不涉及到状态变更。
+
+[plantuml, target=http_stateless, format=png]
+----
+include::uml/http_stateless.puml[]
+----
 
 

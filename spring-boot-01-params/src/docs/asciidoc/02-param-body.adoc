@@ -1,4 +1,4 @@
-=== url path 取数据
+=== 通过 body 取数据
 :paramSourceDir:  ../../main/java/com/github/spring/boot/param/controller
 
 可以用于  GET,POST,PUT,DELETE 请求
@@ -11,5 +11,5 @@ include::{paramSourceDir}/RequestBodyController.java[lines=14..29]
 
 [source,httprequest]
 ----
-include::request/02-param-path.http[]
+include::request/02-param-body.http[]
 ----

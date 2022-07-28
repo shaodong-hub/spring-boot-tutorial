@@ -3,9 +3,9 @@
 :sourcedir: src/docs/asciidoc
 :numbered:
 
-include::{sourcedir}/01-param-body.adoc[]
+include::{sourcedir}/01-param-path.adoc[]
 
-include::{sourcedir}/02-param-path.adoc[]
+include::{sourcedir}/02-param-body.adoc[]
 
 include::{sourcedir}/03-param-header.adoc[]
 
@@ -13,5 +13,5 @@ include::{sourcedir}/04-param-cookie.adoc[]
 
 include::{sourcedir}/05-param-query.adoc[]
 
-
+include::{sourcedir}/06-negotiation.adoc[]
 

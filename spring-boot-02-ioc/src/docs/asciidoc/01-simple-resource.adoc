@@ -2,13 +2,13 @@
 
 :iocSourceDir: ../../main/java/com/github/spring/boot/ioc/controller
 
-依赖注入一共有两种方式
 
-
+****
 [source,java]
 ----
 include::{iocSourceDir}/ResourceController.java[lines=18..30]
 ----
 
+如果有 `SmsStrategyChinaMobile` 多个实现可以,可以 `@Resource` 中指定 bean 的名称 `@Resource(name = "ChinaMobile")`
 
-
+****

@@ -2,6 +2,7 @@ POST http://localhost:8080/sms/strategy/ChinaMobile
 Content-Type: application/json
 
 {
+  "type": "ChinaMobile",
   "mobile": "18888888888",
   "message": "hello ChinaMobile"
 }

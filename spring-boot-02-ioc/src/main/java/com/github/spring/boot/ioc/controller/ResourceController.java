@@ -16,7 +16,6 @@ import javax.annotation.Resource;
  * @version 0.0.1
  */
 @RestController
-@RequiredArgsConstructor
 public class ResourceController {
 
     @Resource

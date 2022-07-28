@@ -2,15 +2,14 @@
 
 :iocSourceDir: ../../main/java/com/github/spring/boot/ioc/controller
 
-依赖注入一共有两种方式
-
+****
+使用构造方法注入可以与 lombok `@RequiredArgsConstructor` 注解进行结合
 
 [source,java]
 ----
 include::{iocSourceDir}/ConstructorController.java[lines=16..27]
 ----
-
-
+****
 
 
 

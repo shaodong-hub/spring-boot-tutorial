@@ -3,10 +3,61 @@
 :sourcedir: src/docs/asciidoc
 :numbered:
 
+****
+依赖注入（DI）和控制反转（IOC）基本是一个意思.
+
+DI(依赖注入)最早由 Martin Fowler 提出
+
+今世界软件开发领域最具影响力的五位大师之一。
+
+微服务,DI,领域,敏捷编程等
+
+image::Martin_Fowler.jpeg[]
+
+****
+
+****
+IOC 容器本质就是一个 Map, 你所需要所用的 bean 都从容器中获取, bean 的生命周期由 IOC 容器控制.
+
+A 依赖 B,就从 IOC 容器中获取已经生成好的 B 传到 A 中.
+
+A 只负责使用 B,但是不负责 B 的生成和销毁.
+****
+
+
+依赖注入一共有3种方式
+
+
+=== @Autowired
+****
+[source,java]
+----
+@Service
+public class TestService2 {
+
+    @Autowired
+    private TestService1 testService1;
+}
+----
+****
+
+[TIP]
+.提示
+====
+. springboot 目前已经不推荐了
+====
+
+
 include::{sourcedir}/01-simple-resource.adoc[]
 
 include::{sourcedir}/02-simple-constructor.adoc[]
 
 include::{sourcedir}/03-strategy.adoc[]
 
+
+=== 注意事项
+
+* 绝大部分情况下,注入到 Spring 容器里的 bean 都是单例的;
+* 绝大部分情况下,注入到 Spring 容器里的 bean 都是无状态的;
+* 在单例模式下,如果是有状态的 bean 则要考虑线程安全问题;
 
