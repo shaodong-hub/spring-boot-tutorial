@@ -14,6 +14,8 @@ include::docs/java_coder.adoc[]
 
 include::docs/http_protocol.adoc[]
 
+include::docs/spring_boot_init.adoc[]
+
 include::spring-boot-01-params/README.adoc[]
 
 include::spring-boot-02-ioc/README.adoc[]

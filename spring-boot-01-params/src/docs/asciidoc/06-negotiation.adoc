@@ -3,7 +3,7 @@
 同一资源,可以有多种表现形式，比如xml、json等，具体使用哪种表现形式，是可以协商的.
 
 演示请求返回使用 xml 格式
-
+****
 [source,xml]
 ----
 <dependency>
@@ -11,16 +11,16 @@
     <artifactId>jackson-dataformat-xml</artifactId>
 </dependency>
 ----
-
+****
 请求同样的接口
-
+****
 [source,httprequest]
 ----
 include::request/06-negotiation.http[]
 ----
-
+****
 body 中使用 xml 格式 需要在 header 中添加 `Content-Type: application/xml` body 添加如下数据
-
+****
 [source,xml]
 ----
 <UserInfo>
@@ -28,7 +28,7 @@ body 中使用 xml 格式 需要在 header 中添加 `Content-Type: application/
     <age>18</age>
 </UserInfo>
 ----
-
+****
 
 
 

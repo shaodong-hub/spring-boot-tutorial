@@ -1,16 +1,16 @@
 === 从 cookie 中获取数据
 :paramSourceDir:  ../../main/java/com/github/spring/boot/param/controller
 
-
+****
 [source,java]
 ----
 include::{paramSourceDir}/RequestCookieController.java[lines=13..21]
 ----
-
-
+****
+****
 [source,httprequest]
 ----
 include::request/04-param-cookie.http[]
 ----
-
+****
 

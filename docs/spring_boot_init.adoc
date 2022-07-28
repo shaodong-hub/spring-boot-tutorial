@@ -1,0 +1,24 @@
+== SpringBoot 工程初始化
+:doctype: book
+:numbered:
+
+=== 使用 IDEA 初始化工程
+
+image::Jul-29-2022 00-42-35.gif[]
+
+
+=== 使用 SpringBoot 官网创建工程
+
+https://start.spring.io
+
+
+image::WX20220729-004932@2x.png[]
+
+image::WX20220729-004952@2x.png[]
+
+=== SpringBoot官网
+
+https://spring.io
+
+
+
