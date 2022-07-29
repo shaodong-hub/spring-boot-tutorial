@@ -1,7 +1,7 @@
 === Configuration
 :aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/bean
 
-使用 @Configuration 注解想容器中注入 Bean
+使用 @Configuration 注解向容器中注入 Bean
 
 [source,java]
 ----

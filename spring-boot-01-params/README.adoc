@@ -15,3 +15,9 @@ include::{sourcedir}/05-param-query.adoc[]
 
 include::{sourcedir}/06-negotiation.adoc[]
 
+
+[TIP]
+.提示
+====
+. 由于安全规定目前只能用 GET 和 POST 请求
+====

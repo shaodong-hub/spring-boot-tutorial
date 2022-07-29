@@ -12,6 +12,8 @@ DI(依赖注入)最早由 Martin Fowler 提出
 
 微服务,DI,领域,敏捷编程等
 
+书籍: 企业应用架构模式, 重构-改善既有代码的设计, UML精粹
+
 image::Martin_Fowler.jpeg[]
 
 ****
@@ -19,14 +21,12 @@ image::Martin_Fowler.jpeg[]
 ****
 IOC 容器本质就是一个 Map, 你所需要所用的 bean 都从容器中获取, bean 的生命周期由 IOC 容器控制.
 
-A 依赖 B,就从 IOC 容器中获取已经生成好的 B 传到 A 中.
+A 依赖 B, 就从 IOC 容器中获取已经生成好的 B 传到 A 中.
 
-A 只负责使用 B,但是不负责 B 的生成和销毁.
+A 只负责使用 B, 但是不负责 B 的生成和销毁.
 ****
 
-
 依赖注入一共有3种方式
-
 
 === @Autowired
 ****

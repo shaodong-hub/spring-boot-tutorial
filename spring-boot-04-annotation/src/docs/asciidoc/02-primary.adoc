@@ -1,3 +1,6 @@
 === Primary
 
 :aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/aspect
+
+有多个实现时,使用 @Primary 优选使用 Bean
+

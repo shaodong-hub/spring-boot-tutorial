@@ -1,5 +1,5 @@
 GET http://localhost:8080/cookie
 Content-Type: application/json
-Cookie: SESSION=123456
+Cookie: SESSION=123456;XXX=456
 
 ###

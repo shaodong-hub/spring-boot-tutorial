@@ -1,7 +1,7 @@
 === url path 取数据
 :paramSourceDir:  ../../main/java/com/github/spring/boot/param/controller
 
-一般用于 POST/PUT/DELETE 请求
+一般用于 GET/POST/PUT/DELETE 请求
 
 从 URL 中获取参数
 ****
