@@ -15,37 +15,37 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * create in 2022/7/18 00:12
+ * create in 2022/8/1 10:08
  *
  * @author shishaodong
  * @version 0.0.1
  */
 @SpringBootTest
 @AutoConfigureMockMvc
-@DisplayName("测试别名")
-class JsonPropertyFacadeTest {
+@DisplayName("自定义序列化与反序列化")
+class JsonSerializeFacadeTest {
 
     @Resource
     private MockMvc mockMvc;
 
     @Test
-    @DisplayName("代码中使用 username, 传参时使用 account")
-    void jsonProperty() throws Exception {
-        mockMvc.perform(post("/JsonProperty").contentType(MediaType.APPLICATION_JSON).content(getData()))
+    @DisplayName("将字符串中;转换成|返回")
+    void jsonSerialize() throws Exception {
+        mockMvc.perform(post("/JsonSerialize").contentType(MediaType.APPLICATION_JSON).content(getData()))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.account").value("test_username"))
-                .andExpect(jsonPath("$.note").value("测试"))
+                .andExpect(jsonPath("$.username").value("test_username"))
+                .andExpect(jsonPath("$.mobiles").value("111|222|333"))
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
+
     }
 
     private String getData() {
         return "{\n" +
-                "  \"account\" : \"test_username\",\n" +
-                "  \"note\": \"测试\"" +
+                "  \"username\" : \"test_username\",\n" +
+                "  \"mobiles\": \"111;222;333\"" +
                 "}";
     }
-
 }

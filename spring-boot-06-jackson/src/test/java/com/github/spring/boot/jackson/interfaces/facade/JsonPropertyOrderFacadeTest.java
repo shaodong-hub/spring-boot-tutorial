@@ -1,5 +1,6 @@
 package com.github.spring.boot.jackson.interfaces.facade;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -15,26 +16,28 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * create in 2022/7/18 00:12
+ * create in 2022/8/1 10:44
  *
  * @author shishaodong
  * @version 0.0.1
  */
+@Slf4j
 @SpringBootTest
 @AutoConfigureMockMvc
-@DisplayName("测试别名")
-class JsonPropertyFacadeTest {
+@DisplayName("测试序列化字段顺序")
+class JsonPropertyOrderFacadeTest {
 
     @Resource
     private MockMvc mockMvc;
 
     @Test
-    @DisplayName("代码中使用 username, 传参时使用 account")
-    void jsonProperty() throws Exception {
-        mockMvc.perform(post("/JsonProperty").contentType(MediaType.APPLICATION_JSON).content(getData()))
+    @DisplayName("序列化好的字段以字母顺序生成")
+    void jsonPropertyOrder() throws Exception {
+        mockMvc.perform(post("/JsonPropertyOrder").contentType(MediaType.APPLICATION_JSON).content(getData()))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.account").value("test_username"))
+                .andExpect(jsonPath("$.username").value("test_username"))
+                .andExpect(jsonPath("$.age").value(18))
                 .andExpect(jsonPath("$.note").value("测试"))
                 .andReturn()
                 .getResponse()
@@ -43,9 +46,9 @@ class JsonPropertyFacadeTest {
 
     private String getData() {
         return "{\n" +
-                "  \"account\" : \"test_username\",\n" +
+                "  \"username\" : \"test_username\",\n" +
+                "  \"age\" : 18,\n" +
                 "  \"note\": \"测试\"" +
                 "}";
     }
-
 }

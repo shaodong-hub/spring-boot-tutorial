@@ -1,0 +1,25 @@
+=== JsonFormat
+
+前后端如何传时间
+
+涉及到两个过程
+
+
+目前 JVM 中一共有两个类型的时间类 `LocalDate` `LocalDateTime` 和 `Date`
+`LocalDate` `LocalDateTime` 从 Java8 才开始提供
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

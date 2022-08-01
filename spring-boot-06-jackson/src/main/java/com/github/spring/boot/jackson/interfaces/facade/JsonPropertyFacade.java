@@ -1,12 +1,9 @@
 package com.github.spring.boot.jackson.interfaces.facade;
 
-import com.github.spring.boot.jackson.infrastructure.common.UserInfo;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.github.spring.boot.jackson.infrastructure.common.UserInfoJsonProperty;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.time.LocalDateTime;
 
 /**
  * create in 2022/7/17 23:53
@@ -17,20 +14,24 @@ import java.time.LocalDateTime;
 @RestController
 public class JsonPropertyFacade {
 
-    @GetMapping("json")
-    public UserInfo userInfo() {
-        UserInfo userInfo = new UserInfo();
-        userInfo.setUsername("test_username");
-        userInfo.setNote("test_note");
-        userInfo.setPass("123456");
-        userInfo.setDateTime(LocalDateTime.now());
-        return new UserInfo();
+    @PostMapping("JsonProperty")
+    public UserInfoJsonProperty jsonProperty(@RequestBody UserInfoJsonProperty jsonProperty) {
+        return jsonProperty;
     }
 
-    @PostMapping("json")
-    public UserInfo userInfo(@RequestBody UserInfo userInfo) {
-        return userInfo;
-    }
+//    @GetMapping("json")
+//    public UserInfo userInfo() {
+//        UserInfo userInfo = new UserInfo();
+//        userInfo.setUsername("test_username");
+//        userInfo.setNote("test_note");
+//        userInfo.setPass("123456");
+//        userInfo.setDateTime(LocalDateTime.now());
+//        return new UserInfo();
+//    }
 
+//    @PostMapping("json")
+//    public UserInfo userInfo(@RequestBody UserInfo userInfo) {
+//        return userInfo;
+//    }
 
 }

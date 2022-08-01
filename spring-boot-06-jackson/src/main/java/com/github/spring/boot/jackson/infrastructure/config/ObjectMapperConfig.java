@@ -24,7 +24,7 @@ import java.time.format.DateTimeFormatter;
  * @author shishaodong
  * @version 0.0.1
  */
-//@Configuration
+@Configuration
 public class ObjectMapperConfig {
 
     private static final String DEFAULT_DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
