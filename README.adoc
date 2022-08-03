@@ -18,6 +18,8 @@ include::docs/spring_boot_init.adoc[]
 
 include::docs/idea_plugins.adoc[]
 
+include::docs/java_doc.adoc[]
+
 include::spring-boot-01-params/README.adoc[]
 
 include::spring-boot-02-ioc/README.adoc[]
@@ -25,3 +27,5 @@ include::spring-boot-02-ioc/README.adoc[]
 include::spring-boot-03-aop/README.adoc[]
 
 include::spring-boot-04-annotation/README.adoc[]
+
+include::spring-boot-06-jackson/README.adoc[]

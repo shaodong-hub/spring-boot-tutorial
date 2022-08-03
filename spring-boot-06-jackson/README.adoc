@@ -1,6 +1,16 @@
 == Jackson
+:doctype: book
+:sourcedir: src/docs/asciidoc
+:numbered:
 
-
+include::{sourcedir}/01-JsonFormat.adoc[]
 
 include::{sourcedir}/02-JsonProperty.adoc[]
+
+include::{sourcedir}/03-JsonPropertyOrder.adoc[]
+
+include::{sourcedir}/04-Serialization.adoc[]
+
+include::{sourcedir}/05-JsonView.adoc[]
+
 

@@ -1,0 +1,96 @@
+== Javadoc
+
+=== 错误示例
+
+image::plugins/WX20220803-141337.png[width=960,height=720]
+
+=== JDK 支持的 JavaDoc 标签
+
+|===
+|标签 |描述 |在 JDK/SDK 中引入
+
+|@author
+|名称文本，仅限类和接口
+|1.0
+
+|{@code}
+|显示文本，而不会将文本解释为 HTML 标记或嵌套的 javadoc 标签
+|1.5
+
+|{@docRoot}
+|指明当前文档根目录的路径
+|1.3
+
+|@deprecated
+|弃用文本，指名一个过期的类或成员，表明该类或方法不建议使用
+|1.0
+
+|@exception
+|可能抛出异常的说明，一般用于方法注释
+|1.0
+
+|{@inheritDoc}
+|从直接父类继承的注释
+|1.4
+
+|{@link}
+|插入一个到另一个主题的链接
+|1.2
+
+|{@linkplain}
+|插入一个到另一个主题的链接，但是该链接显示纯文本字体
+|1.4
+
+|{@literal}
+|显示文本，而不会将文本解释为 HTML 标记或嵌套的 javadoc 标签
+|1.5
+
+|@param
+|说明一个参数，仅限方法和构造器
+|1.0
+
+|@return
+|说明返回值类型，仅限方法
+|1.0
+
+|@see
+|指定一个到另一个主题的链接
+|1.0
+
+|@serial
+|说明一个序列化属性
+|1.2
+
+|@serialData
+|说明通过 writeObject() 和 writeExternal() 方法写的数据
+|1.2
+
+|@serialField
+|说明一个 ObjectStreamField 组件
+|1.2
+
+|@since
+|说明从哪个版本起开始有了这个函数
+|1.1
+
+|@throws
+|和 @exception 标签一样.
+|1.2
+
+|{@value}
+|显示常量的值，该常量必须是 static 属性。
+|1.4
+
+|@version
+|指定版本，仅限类和接口
+|1.0
+|===
+
+=== IDEA 生成 JavaDoc
+
+image::plugins/Aug-03-2022 14-18-08.gif[width=960,height=720]
+
+[source]
+----
+-encoding utf-8 -charset utf-8
+----
