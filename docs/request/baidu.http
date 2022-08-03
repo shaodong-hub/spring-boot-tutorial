@@ -1,0 +1,4 @@
+GET https://ifconfig.me
+Accept: application/json
+
+###

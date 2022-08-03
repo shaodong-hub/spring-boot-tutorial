@@ -16,6 +16,8 @@ include::docs/http_protocol.adoc[]
 
 include::docs/spring_boot_init.adoc[]
 
+include::docs/idea_plugins.adoc[]
+
 include::spring-boot-01-params/README.adoc[]
 
 include::spring-boot-02-ioc/README.adoc[]
