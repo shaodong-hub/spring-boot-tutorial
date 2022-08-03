@@ -1,3 +1,14 @@
-=== ConfigurationProperties
+=== @ConfigurationProperties
 
-:aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/aspect
+:aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/config
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/PropertiesConfig.java[lines=13..92]
+----
+****
+
+
+

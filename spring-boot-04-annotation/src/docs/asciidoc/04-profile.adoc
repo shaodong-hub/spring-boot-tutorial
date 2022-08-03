@@ -1,3 +1,13 @@
-=== Profile
+=== @Profile
 
-:aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/aspect
+:aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/profile
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/ProfileBean.java[lines=13..92]
+----
+****
+
+

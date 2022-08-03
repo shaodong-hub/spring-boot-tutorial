@@ -1,8 +1,7 @@
-== 一些注解
+== 一些常用注解
 :doctype: book
 :sourcedir: src/docs/asciidoc
 :numbered:
-
 
 
 include::{sourcedir}/01-configuration.adoc[]

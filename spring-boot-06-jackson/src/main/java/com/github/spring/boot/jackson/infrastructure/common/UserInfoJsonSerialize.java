@@ -23,5 +23,4 @@ public class UserInfoJsonSerialize {
     @JsonDeserialize(using = MobileDeserializer.class)
     private Set<String> mobiles;
 
-
 }

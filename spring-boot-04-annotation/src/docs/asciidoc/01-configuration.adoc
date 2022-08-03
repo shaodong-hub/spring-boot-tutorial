@@ -1,12 +1,11 @@
-=== Configuration
+=== @Configuration
 :aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/bean
 
 使用 @Configuration 注解向容器中注入 Bean
 
+****
 [source,java]
 ----
-include::{aopSourceDir}/BeanConfig.java[lines=15..92]
+include::{aopSourceDir}/BeanConfig.java[lines=17..92]
 ----
-
-
-
+****

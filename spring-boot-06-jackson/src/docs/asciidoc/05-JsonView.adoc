@@ -1,7 +1,16 @@
 === JsonView
+:aopSourceDir: ../../main/java/com/github/spring/boot/jackson/infrastructure/common
+
+
 
 同样的数据返回不同视图
 
+****
+[source,java]
+----
+include::{aopSourceDir}/UserInfoJsonView.java[lines=14..92]
+----
+****
 
 
 

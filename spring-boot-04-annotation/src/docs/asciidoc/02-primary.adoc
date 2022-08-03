@@ -1,6 +1,12 @@
-=== Primary
+=== @Primary
 
-:aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/aspect
+:aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/bean
 
 有多个实现时,使用 @Primary 优选使用 Bean
 
+****
+[source,java]
+----
+include::{aopSourceDir}/BeanConfig.java[lines=17..92]
+----
+****
