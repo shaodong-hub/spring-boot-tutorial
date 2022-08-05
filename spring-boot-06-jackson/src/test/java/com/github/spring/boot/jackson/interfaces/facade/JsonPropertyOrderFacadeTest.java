@@ -33,7 +33,9 @@ class JsonPropertyOrderFacadeTest {
     @Test
     @DisplayName("序列化好的字段以字母顺序生成")
     void jsonPropertyOrder() throws Exception {
-        mockMvc.perform(post("/JsonPropertyOrder").contentType(MediaType.APPLICATION_JSON).content(getData()))
+        mockMvc.perform(post("/JsonPropertyOrder")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getData()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.username").value("test_username"))

@@ -1,6 +1,7 @@
 package com.github.spring.boot.ioc.service;
 
 import com.github.spring.boot.ioc.pojo.SmsSendCommand;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +13,10 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component("ChinaTelecom")
+@AllArgsConstructor
 public class SmsStrategyChinaTelecom implements ISmsStrategy {
+
+    private final SmsStrategyChinaMobile chinaMobile;
 
     @Override
     public String doSend(SmsSendCommand command) {

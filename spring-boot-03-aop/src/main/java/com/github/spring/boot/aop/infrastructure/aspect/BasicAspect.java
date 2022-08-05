@@ -32,6 +32,7 @@ public class BasicAspect {
      */
     @Pointcut("execution(* com.github.spring.boot.aop.application.service.*.*(..))")
     public void pointCut() {
+        // why
     }
 
     /**

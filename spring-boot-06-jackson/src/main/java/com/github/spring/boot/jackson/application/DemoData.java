@@ -1,7 +1,9 @@
 package com.github.spring.boot.jackson.application;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 
@@ -11,16 +13,17 @@ import java.util.List;
  * @author shishaodong
  * @version 0.0.1
  */
+
 @NoArgsConstructor
-@lombok.Data
-public class Data {
+@Data
+public class DemoData {
 
     @JsonProperty("sites")
-    private SitesDTO sites;
+    private SitesValue sites;
 
     @NoArgsConstructor
-    @lombok.Data
-    public static class SitesDTO {
+    @Data
+    public static class SitesValue {
         @JsonProperty("id")
         private String id;
         @JsonProperty("name")
@@ -32,8 +35,12 @@ public class Data {
         @JsonProperty("address")
         private List<AddressDTO> address;
 
+        public SitesValue(String id) {
+            this.id = id;
+        }
+
         @NoArgsConstructor
-        @lombok.Data
+        @Data
         public static class LangDTO {
             @JsonProperty("en")
             private String en;
@@ -42,7 +49,7 @@ public class Data {
         }
 
         @NoArgsConstructor
-        @lombok.Data
+        @Data
         public static class AddressDTO {
             @JsonProperty("city")
             private String city;

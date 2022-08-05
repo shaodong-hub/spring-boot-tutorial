@@ -33,7 +33,9 @@ class JsonFormatFacadeTest {
     @Test
     @DisplayName("时间格式为 yyyy-MM-dd")
     void jsonFormat() throws Exception {
-        String contentAsString = mockMvc.perform(post("/JsonFormat").contentType(MediaType.APPLICATION_JSON).content(getData()))
+        String contentAsString = mockMvc.perform(post("/JsonFormat")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getData()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.username").value("test_username"))

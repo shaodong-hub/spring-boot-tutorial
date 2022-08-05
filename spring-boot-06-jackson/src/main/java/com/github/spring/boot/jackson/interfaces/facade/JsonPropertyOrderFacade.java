@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * create in 2022/8/1 10:43
- *
  * @author shishaodong
  * @version 0.0.1
  */
@@ -18,6 +17,7 @@ public class JsonPropertyOrderFacade {
 
     @PostMapping("JsonPropertyOrder")
     public UserInfoJsonPropertyOrder jsonPropertyOrder(@RequestBody UserInfoJsonPropertyOrder jsonPropertyOrder) {
+        //
         return jsonPropertyOrder;
     }
 

@@ -31,7 +31,9 @@ class JsonPropertyFacadeTest {
     @Test
     @DisplayName("代码中使用 username, 传参时使用 account")
     void jsonProperty() throws Exception {
-        mockMvc.perform(post("/JsonProperty").contentType(MediaType.APPLICATION_JSON).content(getData()))
+        mockMvc.perform(post("/JsonProperty")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getData()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.account").value("test_username"))
