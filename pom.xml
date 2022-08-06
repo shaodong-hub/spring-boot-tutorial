@@ -18,7 +18,7 @@
         <module>spring-boot-03-aop</module>
         <module>spring-boot-04-annotation</module>
         <module>spring-boot-06-jackson</module>
-
+        <module>spring-boot-07-validation</module>
     </modules>
 
     <properties>
@@ -27,6 +27,16 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>5.8.5</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-crypto</artifactId>
+                <version>5.8.5</version>
+            </dependency>
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>annotations</artifactId>

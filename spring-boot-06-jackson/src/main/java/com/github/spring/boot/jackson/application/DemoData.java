@@ -3,7 +3,6 @@ package com.github.spring.boot.jackson.application;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 
