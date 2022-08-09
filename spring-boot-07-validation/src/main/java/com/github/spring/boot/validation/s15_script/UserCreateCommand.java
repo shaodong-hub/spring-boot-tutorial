@@ -1,4 +1,4 @@
-package com.github.spring.boot.validation.s01_bastic;
+package com.github.spring.boot.validation.s15_script;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

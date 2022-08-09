@@ -8,27 +8,26 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.Length;
 
-import javax.validation.constraints.Email;
+import javax.validation.constraints.Future;
+import java.util.Date;
 
 /**
- * create in 2021/5/14 9:22 上午
+ * create in 2021/5/14 9:23 上午
  *
  * @author shishaodong
  * @version 0.0.1
  */
-
 @Slf4j
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserExtDTO {
+public class BookInfo {
 
     @Length(min = 4, max = 10)
-    String phone;
+    String bookName;
 
-    @Email
-    String email;
-
+    @Future
+    Date expireDate;
 
 }

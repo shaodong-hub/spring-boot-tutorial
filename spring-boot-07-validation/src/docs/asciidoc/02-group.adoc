@@ -1,0 +1,39 @@
+=== 分组校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s02_group
+
+根据需要校验特定字段,应用场景：SpringDataJPA 中 save 方法没有 ID 字段就是保持新的数据，如果有 ID 字段就是跟新数据。
+使用方法：首先写一些接口，这里的接口是标记用的，就像 JsonView 一样。
+
+接口 1
+****
+[source,java]
+----
+include::{aopSourceDir}/Group1.java[lines=9..11]
+----
+****
+
+接口 2
+****
+[source,java]
+----
+include::{aopSourceDir}/Group2.java[lines=9..11]
+----
+****
+
+在要校验的字段上标记注解并指定分组
+****
+[source,java]
+----
+include::{aopSourceDir}/UserCreateCommand.java[lines=25..92]
+----
+****
+
+
+使用
+****
+[source,java]
+----
+include::{aopSourceDir}/GroupValidateService.java[lines=16..92]
+----
+****
+

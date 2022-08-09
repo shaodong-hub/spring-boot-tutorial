@@ -4,6 +4,7 @@ package com.github.spring.boot.validation.s05_cross;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Resource;
@@ -22,7 +23,7 @@ import javax.validation.constraintvalidation.ValidationTarget;
  * @version 0.0.1
  * @since 0.0.1
  */
-
+@Slf4j
 @SupportedValidationTarget(ValidationTarget.PARAMETERS)
 public class CrossValidator implements ConstraintValidator<Cross, Object[]> {
 
@@ -32,7 +33,9 @@ public class CrossValidator implements ConstraintValidator<Cross, Object[]> {
     @Override
     @SneakyThrows(JsonProcessingException.class)
     public boolean isValid(Object[] values, ConstraintValidatorContext context) {
-        return StringUtils.equalsIgnoreCase(objectMapper.writeValueAsString(values[0]), objectMapper.writeValueAsString(values[1]));
+        String data1 = objectMapper.writeValueAsString(values[0]);
+        String data2 = objectMapper.writeValueAsString(values[1]);
+        log.info("data1-{}    data2-{}", data1, data2);
+        return StringUtils.equalsIgnoreCase(data1, data2);
     }
-
 }

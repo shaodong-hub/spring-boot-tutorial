@@ -29,3 +29,5 @@ include::spring-boot-03-aop/README.adoc[]
 include::spring-boot-04-annotation/README.adoc[]
 
 include::spring-boot-06-jackson/README.adoc[]
+
+include::spring-boot-07-validation/README.adoc[]

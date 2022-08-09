@@ -1,0 +1,13 @@
+=== 返回值校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s10_return
+
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/ReturnService.java[lines=19..50]
+----
+****
+
+

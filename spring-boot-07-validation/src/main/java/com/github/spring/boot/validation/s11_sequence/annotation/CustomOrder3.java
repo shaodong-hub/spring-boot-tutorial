@@ -1,6 +1,5 @@
 package com.github.spring.boot.validation.s11_sequence.annotation;
 
-import com.github.spring.boot.validation.s05_cross.CrossValidator;
 import com.github.spring.boot.validation.s11_sequence.validator.CustomOrder3Validator;
 
 import javax.validation.Constraint;

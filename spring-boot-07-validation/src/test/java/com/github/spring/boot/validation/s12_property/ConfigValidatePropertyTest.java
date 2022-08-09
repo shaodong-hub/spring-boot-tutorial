@@ -6,8 +6,6 @@ import org.springframework.test.context.ActiveProfiles;
 
 import javax.annotation.Resource;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * create in 2022/8/6 18:09
  *

@@ -1,34 +1,39 @@
-package com.github.spring.boot.validation.s03_cascade;
+package com.github.spring.boot.validation.s08_controller;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.Length;
 
-import javax.validation.constraints.Future;
-import java.util.Date;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 /**
- * create in 2021/5/14 9:23 上午
+ * create in 2021/5/13 7:31 下午
  *
  * @author shishaodong
  * @version 0.0.1
  */
+
 @Slf4j
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class BookInfoDTO {
+public class UserCreateCommand {
 
-    @Length(min = 4, max = 10)
-    String bookName;
+    @Length(min = 5, max = 20)
+    String username;
 
-    @Future
-    Date expireDate;
-
-
+    @Min(1)
+    @Max(24)
+    Integer age;
 }
+
+
+

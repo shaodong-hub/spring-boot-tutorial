@@ -24,6 +24,5 @@ class CrossValidServiceTest {
     void check() {
         UserCreateCommand check = service.check(new UserCreateCommand("test_username"), new UserCreateCommand("test_username"));
         Assertions.assertEquals("test_username", check.getUsername());
-
     }
 }

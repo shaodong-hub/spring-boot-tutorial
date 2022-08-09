@@ -1,4 +1,4 @@
-package com.github.spring.boot.validation.s01_bastic;
+package com.github.spring.boot.validation.s01_basic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -6,17 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.validator.constraints.Length;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import java.util.Date;
-import java.util.Map;
+import javax.validation.constraints.Email;
 
 /**
- * TODO
- * <p>
- * create in 2021/5/13 11:29 下午
+ * create in 2021/5/14 9:22 上午
  *
  * @author shishaodong
  * @version 0.0.1
@@ -27,16 +22,12 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserInfoDTO {
+public class UserExt {
 
-    @Min(1) @Max(150)
-    Integer age;
-    @Valid
-    UserExtDTO userExt;
+    @Length(min = 4, max = 10)
+    String phone;
 
-    String username;
-
-    Date birthday;
-    Map<Integer, @Valid BookInfoDTO> bookMaps;
+    @Email
+    String email;
 
 }

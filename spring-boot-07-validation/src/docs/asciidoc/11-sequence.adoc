@@ -1,0 +1,12 @@
+=== 指定顺序校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s11_sequence
+
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/UserCreateCommand.java[lines=26..50]
+----
+****
+

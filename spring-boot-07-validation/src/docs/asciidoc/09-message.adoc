@@ -1,0 +1,4 @@
+=== 自定义消息
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s09_message
+
+

@@ -20,7 +20,6 @@ import java.util.Map;
  * @version 0.0.1
  * @since 0.0.1
  */
-
 public class ClassValidValidator implements ConstraintValidator<ClassValid, UserCreateCommand> {
 
     private final Map<String, Pair<Integer, Integer>> map = new HashMap<>();
@@ -35,5 +34,4 @@ public class ClassValidValidator implements ConstraintValidator<ClassValid, User
         Pair<Integer, Integer> ageRange = map.get(value.getEducation());
         return value.getAge() >= ageRange.getKey() && value.getAge() <= ageRange.getValue();
     }
-
 }

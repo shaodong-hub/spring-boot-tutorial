@@ -1,0 +1,14 @@
+=== controller 校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s08_controller
+
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/ValidateController.java[lines=22..50]
+----
+****
+
+
+

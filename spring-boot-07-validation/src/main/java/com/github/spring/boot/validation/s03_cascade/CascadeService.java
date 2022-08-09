@@ -18,9 +18,8 @@ import javax.validation.Valid;
 @Service
 public class CascadeService {
 
-    public UserInfoDTO cascade(@Valid UserInfoDTO userInfo) {
+    public UserInfoCommand cascade(@Valid UserInfoCommand userInfo) {
         return userInfo;
     }
-
 
 }

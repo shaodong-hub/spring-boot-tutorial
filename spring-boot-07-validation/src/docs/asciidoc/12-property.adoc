@@ -1,0 +1,13 @@
+=== application.properties参数校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s12_property
+
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/ConfigValidateProperty.java[lines=23..50]
+----
+****
+
+]

@@ -1,0 +1,24 @@
+=== 自定义校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s04_custom
+
+先定义一个注解
+****
+[source,java]
+----
+include::{aopSourceDir}/Username.java[lines=19..50]
+----
+****
+
+自定义校验逻辑继承 `ConstraintValidator`
+
+****
+[source,java]
+----
+include::{aopSourceDir}/UsernameValidator.java[lines=19..50]
+----
+****
+
+
+
+
+

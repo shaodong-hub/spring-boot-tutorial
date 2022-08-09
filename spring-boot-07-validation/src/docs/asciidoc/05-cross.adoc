@@ -1,0 +1,24 @@
+=== 交叉校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s05_cross
+
+交叉校验
+方法的入口参数有多个
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/Cross.java[lines=21..50]
+----
+****
+
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/CrossValidator.java[lines=26..50]
+----
+****
+
+

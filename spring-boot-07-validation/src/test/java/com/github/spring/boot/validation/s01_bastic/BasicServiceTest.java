@@ -1,5 +1,7 @@
 package com.github.spring.boot.validation.s01_bastic;
 
+import com.github.spring.boot.validation.s01_basic.BasicService;
+import com.github.spring.boot.validation.s01_basic.UserCreateCommand;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;

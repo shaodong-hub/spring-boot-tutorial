@@ -1,0 +1,14 @@
+=== 手动校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s07_manual
+
+
+
+****
+[source,java]
+----
+include::{aopSourceDir}/ManualService.java[lines=21..50]
+----
+****
+
+
+

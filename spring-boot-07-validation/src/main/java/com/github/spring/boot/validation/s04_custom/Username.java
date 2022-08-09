@@ -11,8 +11,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * TODO
- * <p>
  * create in 2021/5/14 10:07 上午
  *
  * @author shishaodong
@@ -25,7 +23,6 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = {UsernameValidator.class})
 @ReportAsSingleViolation
 public @interface Username {
-
 
     String value() default "";
 

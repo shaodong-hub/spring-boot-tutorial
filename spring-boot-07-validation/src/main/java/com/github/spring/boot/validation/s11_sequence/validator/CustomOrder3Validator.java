@@ -1,6 +1,5 @@
 package com.github.spring.boot.validation.s11_sequence.validator;
 
-import com.github.spring.boot.validation.s11_sequence.annotation.CustomOrder1;
 import com.github.spring.boot.validation.s11_sequence.annotation.CustomOrder3;
 import lombok.extern.slf4j.Slf4j;
 

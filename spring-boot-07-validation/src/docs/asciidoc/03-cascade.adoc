@@ -1,0 +1,12 @@
+=== 级联校验
+:aopSourceDir: ../../main/java/com/github/spring/boot/validation/s03_cascade
+
+所校验的对象是个复杂的结构
+
+****
+[source,java]
+----
+include::{aopSourceDir}/UserInfoCommand.java[lines=22..50]
+----
+****
+
