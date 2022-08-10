@@ -5,10 +5,19 @@
 如:
 名字长度, 年龄, email 格式, 生日等
 
+需要校验的类
 ****
 [source,java]
 ----
 include::{aopSourceDir}/UserCreateCommand.java[lines=25..92]
+----
+****
+
+用到的地方
+****
+[source,java]
+----
+include::{aopSourceDir}/BasicService.java[lines=15..92]
 ----
 ****
 

@@ -6,6 +6,5 @@ package com.github.spring.boot.validation.s02_group;
  * @author shishaodong
  * @version 0.0.1
  */
-
 public interface Group2 {
 }
