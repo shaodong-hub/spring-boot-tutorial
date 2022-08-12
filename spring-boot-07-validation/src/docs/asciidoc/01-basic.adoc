@@ -1,4 +1,4 @@
-=== 基本校验
+=== 基本校验 ⭐️
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s01_basic
 
 对某些字段进行参数校验.

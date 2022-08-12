@@ -1,4 +1,4 @@
-== 依赖注入
+== 依赖注入 ⭐️
 :doctype: book
 :sourcedir: src/docs/asciidoc
 :numbered:

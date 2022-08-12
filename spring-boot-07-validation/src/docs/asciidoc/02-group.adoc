@@ -1,4 +1,4 @@
-=== 分组校验
+=== 分组校验 ⭐️
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s02_group
 
 根据需要校验特定字段,应用场景：SpringDataJPA 中 save 方法没有 ID 字段就是保持新的数据，如果有 ID 字段就是跟新数据。

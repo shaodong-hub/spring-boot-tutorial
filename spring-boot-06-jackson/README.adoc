@@ -1,4 +1,4 @@
-== Jackson
+== Jackson ⭐️
 :doctype: book
 :sourcedir: src/docs/asciidoc
 :numbered:

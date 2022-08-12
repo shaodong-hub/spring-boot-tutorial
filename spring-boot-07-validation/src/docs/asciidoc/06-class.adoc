@@ -1,4 +1,4 @@
-=== 类级别校验
+=== 类级别校验 ⭐️
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s06_class
 
 

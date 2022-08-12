@@ -1,7 +1,5 @@
-=== 组合校验
+=== 组合校验 ⭐️
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s13_composition
-
-
 
 ****
 [source,java]
