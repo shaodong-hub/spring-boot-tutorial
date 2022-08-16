@@ -36,6 +36,7 @@ public class UserInfoCommand {
     String username;
 
     Date birthday;
+
     Map<Integer, @Valid BookInfo> bookMaps;
 
 }

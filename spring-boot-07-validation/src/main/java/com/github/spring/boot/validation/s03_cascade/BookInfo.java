@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Future;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * create in 2021/5/14 9:23 上午
@@ -28,6 +28,6 @@ public class BookInfo {
     String bookName;
 
     @Future
-    Date expireDate;
+    LocalDate expireDate;
 
 }
