@@ -20,7 +20,6 @@ import javax.validation.Valid;
  * @version 0.0.1
  */
 @Slf4j
-@Validated
 @RestController
 public class ValidateController {
 
@@ -30,7 +29,7 @@ public class ValidateController {
     }
 
     @PostMapping("data")
-    public UserCreateCommand check(@Valid @RequestBody UserCreateCommand command, @NotNull BindingResult result) {
+    public UserCreateCommand check(@Valid @RequestBody UserCreateCommand command, BindingResult result) {
         if (result.hasErrors()) {
             result.getAllErrors().forEach(objectError -> log.info(objectError.toString()));
         }

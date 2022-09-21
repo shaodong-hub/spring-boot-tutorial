@@ -41,7 +41,8 @@ class GroupValidateServiceTest {
         @ParameterizedTest
         @CsvSource({"test_username,spring-boot@qq.com,1"})
         void group11(String username, String email, long minus) {
-            UserCreateCommand userCreateCommand = validateService.group1(new UserCreateCommand(username, email, LocalDate.now().minusDays(minus)));
+            UserCreateCommand userCreateCommand = validateService.group1(
+                    new UserCreateCommand(username, email, LocalDate.now().minusDays(minus)));
             Assertions.assertEquals(username, userCreateCommand.getUsername());
         }
 
@@ -50,7 +51,8 @@ class GroupValidateServiceTest {
         @ParameterizedTest
         @CsvSource({"test_username,spring-boot@qq.com,1"})
         void group12(String username, String email, long minus) {
-            UserCreateCommand userCreateCommand1 = new UserCreateCommand(username, email, LocalDate.now().plusDays(minus));
+            UserCreateCommand userCreateCommand1 = new UserCreateCommand(
+                    username, email, LocalDate.now().plusDays(minus));
             Assertions.assertThrowsExactly(ConstraintViolationException.class, () -> validateService.group1(userCreateCommand1));
         }
     }
@@ -65,7 +67,8 @@ class GroupValidateServiceTest {
         @ParameterizedTest
         @CsvSource({"test_username,spring-boot@qq.com,1"})
         void group21(String username, String email, long minus) {
-            UserCreateCommand userCreateCommand = validateService.group2(new UserCreateCommand(username, email, LocalDate.now().minusDays(minus)));
+            UserCreateCommand userCreateCommand = validateService.group2(
+                    new UserCreateCommand(username, email, LocalDate.now().minusDays(minus)));
             Assertions.assertEquals(username, userCreateCommand.getUsername());
         }
 
@@ -74,7 +77,8 @@ class GroupValidateServiceTest {
         @ParameterizedTest
         @CsvSource({"test_username,spring-boot@qq.com,1"})
         void group22(String username, String email, long minus) {
-            UserCreateCommand userCreateCommand = validateService.group2(new UserCreateCommand(username, email, LocalDate.now().plusDays(minus)));
+            UserCreateCommand userCreateCommand = validateService.group2(
+                    new UserCreateCommand(username, email, LocalDate.now().plusDays(minus)));
             Assertions.assertEquals(username, userCreateCommand.getUsername());
         }
     }

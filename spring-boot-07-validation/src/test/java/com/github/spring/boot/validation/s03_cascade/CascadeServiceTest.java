@@ -61,7 +61,8 @@ class CascadeServiceTest {
         UserInfoCommand userInfoCommand = new UserInfoCommand();
         userInfoCommand.setAge(20);
         Map<Integer, BookInfo> bookMaps = new HashMap<>();
-        bookMaps.put(1, new BookInfo("the bad", LocalDate.now().plusDays(1)));
+        bookMaps.put(1, new BookInfo("the bad",
+                LocalDate.now().plusDays(1)));
         userInfoCommand.setBookMaps(bookMaps);
         userInfoCommand.setUserExt(new UserExt("123456", "spring@qq.com"));
         return userInfoCommand;
@@ -71,9 +72,11 @@ class CascadeServiceTest {
         UserInfoCommand userInfoCommand = new UserInfoCommand();
         userInfoCommand.setAge(20);
         Map<Integer, BookInfo> bookMaps = new HashMap<>();
-        bookMaps.put(1, new BookInfo("the bad", LocalDate.now().plusDays(1)));
+        bookMaps.put(1, new BookInfo("the bad",
+                LocalDate.now().plusDays(1)));
         userInfoCommand.setBookMaps(bookMaps);
-        userInfoCommand.setUserExt(new UserExt("123456", "spring.qq.com"));
+        userInfoCommand.setUserExt(
+                new UserExt("123456", "spring.qq.com"));
         return userInfoCommand;
     }
 
@@ -81,9 +84,12 @@ class CascadeServiceTest {
         UserInfoCommand userInfoCommand = new UserInfoCommand();
         userInfoCommand.setAge(20);
         Map<Integer, BookInfo> bookMaps = new HashMap<>();
-        bookMaps.put(1, new BookInfo("the bad", LocalDate.now().minusDays(1)));
+        bookMaps.put(1,
+                new BookInfo("the bad",
+                        LocalDate.now().minusDays(1)));
         userInfoCommand.setBookMaps(bookMaps);
-        userInfoCommand.setUserExt(new UserExt("123456", "spring@qq.com"));
+        userInfoCommand.setUserExt(
+                new UserExt("123456", "spring@qq.com"));
         return userInfoCommand;
     }
 }

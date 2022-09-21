@@ -18,8 +18,8 @@ import javax.validation.constraints.NotNull;
 @Validated
 public class ReturnService {
 
-    @NotNull
-    public UserCreateCommand check(UserCreateCommand user) {
+
+    public @NotNull UserCreateCommand check(UserCreateCommand user) {
         log.info("{}", user);
         if (StringUtils.isBlank(user.getUsername())) {
             return null;
