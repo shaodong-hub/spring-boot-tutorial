@@ -1,5 +1,6 @@
-package com.github.spring.boot.jpa.s03_event;
+package com.github.spring.boot.jpa.s07_transaction;
 
+import com.github.spring.boot.jpa.s03_event.UserCreateEvent;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,7 +30,7 @@ import java.util.Collections;
  */
 @Slf4j
 @Entity
-@Table(name = "S03")
+@Table(name = "S07")
 @DynamicInsert
 @DynamicUpdate
 @Getter
@@ -38,7 +39,7 @@ import java.util.Collections;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuppressWarnings("S03")
-public class UserS03Entity {
+public class UserS07Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,15 +51,5 @@ public class UserS03Entity {
 
     public void updateUsername(String username){
         this.username = username;
-    }
-
-    @DomainEvents
-    public Collection<Object> events() {
-        return Collections.singletonList(new UserCreateEvent(this.id, this.username));
-    }
-
-    @AfterDomainEventPublication
-    public void afterDomainEventPublication() {
-        log.info("afterDomainEventPublication");
     }
 }
