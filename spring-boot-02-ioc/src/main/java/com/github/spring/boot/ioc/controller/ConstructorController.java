@@ -7,17 +7,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 /**
  * create in 2022/7/11 21:50
  *
  * @author shishaodong
  * @version 0.0.1
  */
-@RestController
+//@RestController
 @RequiredArgsConstructor
 public class ConstructorController {
 
-    private final SmsStrategyChinaTelecom chinaTelecom;
+    @Resource
+    private SmsStrategyChinaTelecom chinaTelecom;
 
     @PostMapping("simple/chinaTelecom")
     public String chinaTelecom(@RequestBody SmsSendCommand command) {

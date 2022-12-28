@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 /**
  * create in 2022/7/11 21:35
  *
@@ -12,11 +14,12 @@ import org.springframework.stereotype.Component;
  * @version 0.0.1
  */
 @Slf4j
-@Component("ChinaTelecom")
+//@Component("ChinaTelecom")
 @AllArgsConstructor
 public class SmsStrategyChinaTelecom implements ISmsStrategy {
 
-    private final SmsStrategyChinaMobile chinaMobile;
+    @Resource
+    private SmsStrategyChinaMobile chinaMobile;
 
     @Override
     public String doSend(SmsSendCommand command) {

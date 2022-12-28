@@ -1,2 +1,9 @@
 INSERT INTO s02
-SET id='1',username ='username1',mobile='encrypt:18123456789';
+SET id='1',
+    firstname = 'firstname1',
+    lastname = 'lastname1',
+
+    identity = '123';
+
+
+

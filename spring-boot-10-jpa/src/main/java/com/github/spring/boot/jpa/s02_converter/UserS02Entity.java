@@ -45,11 +45,17 @@ public class UserS02Entity {
     @Column(nullable = false, columnDefinition = "BIGINT COMMENT 'id'")
     Long id;
 
-    @Column(name = "username", columnDefinition = "VARCHAR(32) COMMENT '姓名'", unique = true)
-    @Convert(converter = UsernameConverter.class)
-    String username;
-
     @Embedded
-    @AttributeOverride(name = "mobile", column = @Column(nullable = false, columnDefinition = "CHAR(100) COMMENT 'mobile'"))
-    MobileRecord mobile;
+    @Convert(attributeName = "firstname", converter = UsernameConverter.class)
+    @AttributeOverride(name = "firstname", column = @Column(nullable = false, columnDefinition = "CHAR(20) COMMENT 'firstname'"))
+    @AttributeOverride(name = "lastname", column = @Column(nullable = false, columnDefinition = "CHAR(20) COMMENT 'lastname'"))
+    ContactsRecord contacts;
+
+    @Column(name = "identity", columnDefinition = "VARCHAR(32) COMMENT '身份证'")
+    String identity;
+
+//    @Embedded
+//    @Convert(attributeName = "mobile", converter = MobileConverter.class)
+//    @AttributeOverride(name = "mobile", column =@Column(name = "mobile", columnDefinition = "VARCHAR(32) COMMENT '手机号'"))
+//    MobileRecord mobile;
 }

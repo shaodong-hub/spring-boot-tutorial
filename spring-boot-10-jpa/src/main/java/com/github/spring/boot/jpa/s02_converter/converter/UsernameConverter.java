@@ -1,5 +1,6 @@
 package com.github.spring.boot.jpa.s02_converter.converter;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.AttributeConverter;
@@ -10,15 +11,19 @@ import javax.persistence.AttributeConverter;
  * @author shishaodong
  * @version 0.0.1
  */
+@Slf4j
 public class UsernameConverter implements AttributeConverter<String, String> {
 
     @Override
     public String convertToDatabaseColumn(String attribute) {
-        return StringUtils.isBlank(attribute) ? "" : StringUtils.upperCase(attribute);
+        String upperCase = StringUtils.upperCase(StringUtils.isBlank(attribute) ? "" : attribute);
+        log.info("convertToDatabaseColumn {} {}", attribute, upperCase);
+        return upperCase;
     }
 
     @Override
     public String convertToEntityAttribute(String dbData) {
-        return StringUtils.isBlank(dbData) ? "" : StringUtils.lowerCase(dbData);
+        log.info("convertToEntityAttribute {}", dbData);
+        return dbData;
     }
 }
