@@ -9,6 +9,12 @@ shishaodong <spring-boot@qq.com>
 :pdf-theme: KaiGenGothicCN
 :imagesdir: docs/images
 
+image:https://img.shields.io/badge/Java-1.8%2B-brightgreen[]
+image:https://img.shields.io/badge/IDEA-red[]
+image:https://img.shields.io/badge/SpringBoot-2.7.X-blue[]
+image:https://img.shields.io/badge/HTTP-orange[]
+image:https://img.shields.io/badge/jackson-lightgrey[]
+image:https://img.shields.io/badge/JPA-brightgreen[]
 
 include::docs/java_coder.adoc[]
 
@@ -31,3 +37,7 @@ include::spring-boot-04-annotation/README.adoc[]
 include::spring-boot-06-jackson/README.adoc[]
 
 include::spring-boot-07-validation/README.adoc[]
+
+include::spring-boot-08-redis/README.adoc[]
+
+include::spring-boot-10-jpa/README.adoc[]

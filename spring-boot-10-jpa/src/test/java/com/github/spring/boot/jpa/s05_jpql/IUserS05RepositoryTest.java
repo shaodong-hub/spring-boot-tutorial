@@ -65,5 +65,4 @@ class IUserS05RepositoryTest {
 
     }
 
-
 }

@@ -1,0 +1,40 @@
+=== 注解
+
+[stripes=hover,cols="^1, ^2, ^5"]
+|===
+|注解 |说明 |注释
+
+|Entity
+|标记实体类
+|Column 4, row 1
+
+|Table
+|标记表注解
+|Column 4, row 1
+
+|DynamicInsert
+|动态插入数据
+|Column 4, row 1
+
+|DynamicUpdate
+|动态更新数据
+|Column 4, row 1
+
+|Id
+|标记主键
+|Column 4, row 1
+
+|GeneratedValue
+|主键生成策略
+|Column 4, row 1
+
+|Column
+|表列生成策略
+|Column 4, row 1
+
+|AttributeOverride
+|Column 3, row 1
+|Column 4, row 1
+|===
+
+

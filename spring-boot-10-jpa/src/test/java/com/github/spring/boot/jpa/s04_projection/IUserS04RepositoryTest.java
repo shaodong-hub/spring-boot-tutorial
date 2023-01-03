@@ -34,8 +34,16 @@ class IUserS04RepositoryTest {
     private IUserS04Repository repository;
 
     @Test
-    void findByIdSimple() {
+    void findByIdSimple1() {
         Optional<IUserSimpleVO> optional = repository.findById(1L, IUserSimpleVO.class);
+        Assertions.assertTrue(optional.isPresent());
+        Assertions.assertEquals(1L, optional.get().getId());
+        Assertions.assertEquals("username1", optional.get().getUsername());
+    }
+
+    @Test
+    void findByIdSimple2() {
+        Optional<UserSimpleVO> optional = repository.findById(1L, UserSimpleVO.class);
         Assertions.assertTrue(optional.isPresent());
         Assertions.assertEquals(1L, optional.get().getId());
         Assertions.assertEquals("username1", optional.get().getUsername());

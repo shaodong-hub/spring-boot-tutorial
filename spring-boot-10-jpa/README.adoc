@@ -1,0 +1,19 @@
+== JPA
+
+:doctype: book
+:sourcedir: src/docs/asciidoc
+:numbered:
+
+****
+[source,xml]
+----
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+----
+****
+
+
+include::{sourcedir}/S01-annotation.adoc[]
+

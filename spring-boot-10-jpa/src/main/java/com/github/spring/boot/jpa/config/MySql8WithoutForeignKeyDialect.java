@@ -1,4 +1,4 @@
-package com.github.spring.boot.jpa;
+package com.github.spring.boot.jpa.config;
 
 import org.hibernate.dialect.MySQL8Dialect;
 

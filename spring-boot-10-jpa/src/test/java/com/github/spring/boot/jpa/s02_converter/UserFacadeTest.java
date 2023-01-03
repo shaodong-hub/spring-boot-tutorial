@@ -1,6 +1,5 @@
 package com.github.spring.boot.jpa.s02_converter;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,7 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("junit")
 @SpringBootTest
 @AutoConfigureMockMvc
-@DisplayName("埋点接口测试")
 class UserFacadeTest {
 
     @Resource

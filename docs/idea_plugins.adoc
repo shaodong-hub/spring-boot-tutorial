@@ -60,7 +60,7 @@ image::plugins/Aug-02-2022 00-43-55.gif[width=960,height=720]
 
 === 本地 DEBUG
 
-image::plugins/[width=960,height=720]
+image::plugins/Aug-03-2022 12-53-11.gif[width=960,height=720]
 
 === 远程 DEBUG
 
