@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JsonSerializeFacade {
 
     @PostMapping("JsonSerialize")
-    public UserInfoJsonSerialize jsonSerialize(@RequestBody UserInfoJsonSerialize jsonSerialize){
+    public UserInfoJsonSerialize jsonSerialize(@RequestBody UserInfoJsonSerialize jsonSerialize) {
         return jsonSerialize;
     }
 

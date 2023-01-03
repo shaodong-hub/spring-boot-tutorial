@@ -20,7 +20,7 @@ class ConfigValidatePropertyTest {
     private ConfigValidateProperty property;
 
     @Test
-    void property(){
+    void property() {
 
     }
 

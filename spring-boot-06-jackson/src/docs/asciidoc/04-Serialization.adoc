@@ -1,8 +1,6 @@
 === Serialization
 :aopSourceDir: ../../main/java/com/github/spring/boot/jackson/infrastructure/common
 
-
-
 自定义序列化与反序列化
 
 对输入字段做特殊处理,如不符合JSON格式,字段进行加解密.

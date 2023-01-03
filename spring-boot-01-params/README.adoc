@@ -15,7 +15,6 @@ include::{sourcedir}/05-param-query.adoc[]
 
 include::{sourcedir}/06-negotiation.adoc[]
 
-
 [TIP]
 .提示
 ====

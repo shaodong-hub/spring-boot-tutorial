@@ -26,12 +26,12 @@ public class ProjectedPayloadFacade {
     }
 
     @ProjectedPayload
-    interface UserPayload{
+    interface UserPayload {
 
         @JsonPath("$.firstname")
         String getUsername();
 
-        @JsonPath({ "$.lastname", "$.user.lastname" })
+        @JsonPath({"$.lastname", "$.user.lastname"})
         String getLastname();
     }
 }

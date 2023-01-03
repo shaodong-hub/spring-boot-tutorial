@@ -25,7 +25,7 @@ public class ProfileBean implements InitializingBean {
     }
 
     @PreDestroy
-    public void des(){
+    public void des() {
 
     }
 

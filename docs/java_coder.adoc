@@ -1,6 +1,6 @@
 == 能力图谱
 
-[plantuml, target=diagram-classes, format=png]
+[plantuml,target=diagram-classes,format=png]
 ----
 include::uml/java-coder.puml[]
 ----

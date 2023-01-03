@@ -48,7 +48,7 @@ public class UserS03Entity {
     @Column(name = "username", nullable = false, columnDefinition = "CHAR(100) COMMENT 'username'")
     String username;
 
-    public void updateUsername(String username){
+    public void updateUsername(String username) {
         this.username = username;
     }
 

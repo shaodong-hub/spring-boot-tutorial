@@ -1,6 +1,5 @@
 package com.github.spring.boot.jpa.s07_transaction;
 
-import com.github.spring.boot.jpa.s03_event.UserS03Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

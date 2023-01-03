@@ -7,6 +7,7 @@
 include::{paramSourceDir}/RequestCookieController.java[lines=13..21]
 ----
 ****
+
 ****
 [source,httprequest]
 ----

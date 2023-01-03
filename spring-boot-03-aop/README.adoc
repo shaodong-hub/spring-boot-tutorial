@@ -9,9 +9,7 @@ AOP主要是提供另外一种编程思路，可以把类似的行为抽离出�
 
 例如:Aspect(`@Aspect`), 事务(`@Transaction`), 异步(`@Async`), 重试机制(`@Retry`)
 
-
 image:aop.jpg[]
-
 
 include::{sourcedir}/01-base.adoc[]
 

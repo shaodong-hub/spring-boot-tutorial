@@ -20,12 +20,13 @@
         <module>spring-boot-06-jackson</module>
         <module>spring-boot-07-validation</module>
         <module>spring-boot-10-jpa</module>
+        <module>spring-boot-08-redis</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
-        <hutool.version>5.8.5</hutool.version>
-        <jetbrains.version>23.0.0</jetbrains.version>
+        <hutool.version>5.8.11</hutool.version>
+        <jetbrains.version>23.1.0</jetbrains.version>
         <spring.boot.version>2.7.5</spring.boot.version>
         <snakeyaml.version>1.33</snakeyaml.version>
     </properties>

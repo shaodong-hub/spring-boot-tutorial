@@ -3,10 +3,19 @@
     "id": "1",
     "name": "教程",
     "url": "www.github.com",
-    "lang": {"en": "false", "zn": "true"},
+    "lang": {
+      "en": "false",
+      "zn": "true"
+    },
     "address": [
-      {"city": "beijing", "province": "null"},
-      {"city": "chengdu", "province": "sichuan"}
+      {
+        "city": "beijing",
+        "province": "null"
+      },
+      {
+        "city": "chengdu",
+        "province": "sichuan"
+      }
     ]
   }
 }

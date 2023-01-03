@@ -31,7 +31,6 @@ class IUserS06RepositoryTest {
     void findBy() {
 
 
-
     }
 
 

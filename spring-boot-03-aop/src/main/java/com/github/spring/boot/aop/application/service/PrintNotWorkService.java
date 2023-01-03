@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PrintNotWorkService {
 
-    public int div5NotWork(ArgsCommand command){
+    public int div5NotWork(ArgsCommand command) {
         return extracted(command);
     }
 

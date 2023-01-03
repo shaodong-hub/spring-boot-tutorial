@@ -10,7 +10,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import javax.annotation.Resource;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -30,9 +29,10 @@ class ProjectedPayloadFacadeTest {
 
     @Resource
     private MockMvc mvc;
+
     @Test
     @DisplayName("测试 ProjectedPayload 视图")
-    void userPayload() throws Exception{
+    void userPayload() throws Exception {
         mvc.perform(post("/payload").contentType(MediaType.APPLICATION_JSON).content(getContent()))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))

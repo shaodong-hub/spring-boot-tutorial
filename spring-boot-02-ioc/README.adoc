@@ -29,6 +29,7 @@ A 只负责使用 B, 但是不负责 B 的生成和销毁.
 依赖注入一共有3种方式
 
 === @Autowired
+
 ****
 [source,java]
 ----
@@ -47,13 +48,11 @@ public class TestService2 {
 . springboot 目前已经不推荐了
 ====
 
-
 include::{sourcedir}/01-simple-resource.adoc[]
 
 include::{sourcedir}/02-simple-constructor.adoc[]
 
 include::{sourcedir}/03-strategy.adoc[]
-
 
 === 注意事项
 

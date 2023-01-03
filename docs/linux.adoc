@@ -1,8 +1,227 @@
 == 补充一些 Linux 命令
 
+|===
+|序号 |命令 |示例 |说明
 
-scp
- -P
+|1
+|cat
+|查看文件
+|cat xxx.txt
+
+|2
+|grep
+|抓取指定数据,经常和管道一起用
+|Column 4, row 2
+
+|3
+|ping
+|测试目标 IP 能不能到达, 目标 IP 可能禁ping
+|Column 4, row 3
+
+|4
+|telnet
+|测试端口通不通
+|Column 4, row 4
+
+|5
+|mount
+|挂载磁盘
+|Column 4, row 5
+
+|6
+|touch
+|创建文件
+|Column 4, row 6
+
+|7
+|chmod
+|修改文件/目录权限
+|Column 4, row 6
+
+|7
+|kill
+|杀掉进程
+|Column 4, row 6
+
+|8
+|tail
+|查看文件
+|Column 4, row 6
+
+|9
+|wc
+|count 文件行数
+|Column 4, row 6
+
+|10
+|find
+|查找文件
+|Column 4, row 6
+
+|11
+|systemctl
+|服务相关 启动/重启/停止
+|Column 4, row 6
+
+|12
+|ifconfig
+|查看网卡 IP 信息
+|Column 4, row 6
+
+|13
+|dig
+|查看路由信息
+|Column 4, row 6
+
+|13
+|ps
+|查看进程
+|Column 4, row 6
+
+|14
+|free
+|查看内存
+|Column 4, row 6
+
+|15
+|top
+|查看进程和内存
+|Column 4, row 6
+
+|16
+|vim
+|编辑文本文件
+|Column 4, row 6
+
+|17
+|history
+|查看历史命令
+|Column 4, row 6
+
+|18
+|scp
+|传输文件
+|Column 4, row 6
+
+|19
+|crontab
+|定时任务
+|Column 4, row 6
+
+|20
+|cd
+|进入文件夹
+|Column 4, row 6
+
+|22
+|mkdir
+|创建文件夹
+|Column 4, row 6
+
+|22
+|df
+|查看磁盘
+|Column 4, row 6
+
+|22
+|ssh
+|登录服务器
+|Column 4, row 6
+
+|23
+|ln
+|创建链接
+|Column 4, row 6
+|===
+
+文件目录结构
+
+|===
+|序号 |目录 |说明 |备注
+
+|1
+|/dev
+|设备文件
+|Column 4, row 1
+
+|2
+|/etc
+|大多数配置文件
+|Column 4, row 2
+
+|3
+|/home
+|普通用户的家目录
+|Column 4, row 2
+
+|4
+|/lib
+|32位函数库
+|Column 4, row 2
+
+|5
+|/lib64
+|64位库
+|Column 4, row 2
+
+|6
+|/media
+|手动临时挂载点
+|Column 4, row 2
+
+|7
+|/mnt
+|手动临时挂载点
+|Column 4, row 2
+
+|8
+|/opt
+|第三方软件安装位置
+|Column 4, row 2
+
+|9
+|/proc
+|进程信息及硬件信息
+|Column 4, row 2
+
+|10
+|/root
+|临时设备的默认挂载点
+|Column 4, row 2
+
+|11
+|/sbin
+|系统管理命令
+|Column 4, row 2
+
+|12
+|/srv
+|数据
+|Column 4, row 2
+
+|13
+|/var
+|数据
+|Column 4, row 2
+
+|14
+|/sys
+|内核相关信息
+|Column 4, row 2
+
+|15
+|/tmp
+|临时文件
+|Column 4, row 2
+
+|16
+|/usr
+|用户相关设定
+|Column 4, row 2
+|===
+
+
+
 
 
 

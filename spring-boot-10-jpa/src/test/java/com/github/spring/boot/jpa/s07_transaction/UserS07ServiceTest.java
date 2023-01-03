@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
@@ -50,8 +49,6 @@ class UserS07ServiceTest {
         Assertions.assertTrue(optional.isPresent());
         Assertions.assertEquals("update_username", optional.get().getUsername());
     }
-
-
 
 
     @Test

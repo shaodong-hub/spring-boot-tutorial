@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.Where;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.CascadeType;
@@ -55,27 +53,11 @@ public class UserS08Entity {
     @Column(name = "username", columnDefinition = "VARCHAR(32) COMMENT '姓名'")
     String username;
 
-//    @Where(clause = "type = 1")
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "user_id")
     @MapKey(name = "name")
     @JsonManagedReference
     Map<String, ImageS08Entity> banners;
-
-//    @Where(clause = "type = 2")
-//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JoinColumn(name = "user_id")
-//    @JsonManagedReference
-//    List<ImageS08Entity> icons;
-
-//    public void updateIcons(@NotNull List<ImageS08Entity> images) {
-//        if (CollectionUtils.isEmpty(icons)) {
-//            this.icons = images;
-//        } else {
-//            this.icons.clear();
-//            this.icons.addAll(images);
-//        }
-//    }
 
     public void updateBanners(List<ImageS08Entity> images) {
         if (CollectionUtils.isEmpty(banners)) {

@@ -1,5 +1,6 @@
 package com.github.spring.boot.jpa.s10_one_to_one;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,18 +9,19 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import static javax.persistence.ConstraintMode.NO_CONSTRAINT;
 
 /**
  * create in 2022/12/14 10:44
@@ -49,10 +51,9 @@ public class AddressS10Entity {
     @Column(name = "code", columnDefinition = "VARCHAR(32) COMMENT '类型'")
     String code;
 
-    @Column(name = "user_id", insertable = false, updatable = false)
-    Long userId;
-
-    @OneToOne(mappedBy = "address")
-    @JoinColumn(name = "user_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = NO_CONSTRAINT))
+    @OneToOne(targetEntity = UserS10Entity.class, cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    @JsonManagedReference
+    @NotFound(action = NotFoundAction.IGNORE)
     UserS10Entity user;
 }

@@ -1,8 +1,6 @@
 === 快速失败
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s14_fast
 
-
-
 ****
 [source,java]
 ----

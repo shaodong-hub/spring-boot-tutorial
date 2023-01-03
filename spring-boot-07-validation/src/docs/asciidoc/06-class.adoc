@@ -1,16 +1,12 @@
 === 类级别校验 ⭐️
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s06_class
 
-
-
 ****
 [source,java]
 ----
 include::{aopSourceDir}/ClassValid.java[lines=21..50]
 ----
 ****
-
-
 
 ****
 [source,java]

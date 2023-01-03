@@ -1,8 +1,6 @@
 === 脚本校验
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s15_script
 
-
-
 ****
 [source,java]
 ----

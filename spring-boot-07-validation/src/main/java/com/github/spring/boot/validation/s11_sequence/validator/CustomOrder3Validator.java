@@ -13,7 +13,7 @@ import javax.validation.ConstraintValidatorContext;
  * @version 0.0.1
  */
 @Slf4j
-public class CustomOrder3Validator  implements ConstraintValidator<CustomOrder3, String> {
+public class CustomOrder3Validator implements ConstraintValidator<CustomOrder3, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {

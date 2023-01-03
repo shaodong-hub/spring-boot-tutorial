@@ -1,6 +1,5 @@
 package com.github.spring.boot.jpa.s10_one_to_one;
 
-import com.github.spring.boot.jpa.s08_one_to_many.UserS08Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

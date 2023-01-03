@@ -1,9 +1,7 @@
 === JsonPropertyOrder
 :aopSourceDir: ../../main/java/com/github/spring/boot/jackson/infrastructure/common
 
-
-某些场景需要对序列化后的字符串进行排序
-如: 对数据进行签名,同样的数据顺序不一样,签名出来的结果
+某些场景需要对序列化后的字符串进行排序 如: 对数据进行签名,同样的数据顺序不一样,签名出来的结果
 
 ****
 [source,java]

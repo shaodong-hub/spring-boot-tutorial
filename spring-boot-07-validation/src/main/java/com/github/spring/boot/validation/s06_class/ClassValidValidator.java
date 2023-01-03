@@ -23,6 +23,7 @@ import java.util.Map;
 public class ClassValidValidator implements ConstraintValidator<ClassValid, UserCreateCommand> {
 
     private final Map<String, Pair<Integer, Integer>> map = new HashMap<>();
+
     {
         map.put("学士", new Pair<>(18, 25));
         map.put("硕士", new Pair<>(18, 30));

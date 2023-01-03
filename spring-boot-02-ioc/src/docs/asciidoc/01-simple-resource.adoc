@@ -2,7 +2,6 @@
 
 :iocSourceDir: ../../main/java/com/github/spring/boot/ioc/controller
 
-
 ****
 [source,java]
 ----

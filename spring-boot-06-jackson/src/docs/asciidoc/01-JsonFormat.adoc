@@ -1,7 +1,6 @@
 === JsonFormat
 :aopSourceDir: ../../main/java/com/github/spring/boot/jackson/infrastructure/common
 
-
 前后端如何传时间
 
 目前 JVM 中一共有两个类型的时间类 `LocalDate` `LocalDateTime` 和 `Date`

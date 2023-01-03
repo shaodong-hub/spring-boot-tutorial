@@ -2,6 +2,7 @@
 :aopSourceDir: ../../main/java/com/github/spring/boot/validation/s04_custom
 
 先定义一个注解
+
 ****
 [source,java]
 ----

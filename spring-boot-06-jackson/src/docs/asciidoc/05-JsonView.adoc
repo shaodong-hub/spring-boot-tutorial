@@ -1,8 +1,6 @@
 === JsonView
 :aopSourceDir: ../../main/java/com/github/spring/boot/jackson/infrastructure/common
 
-
-
 同样的数据返回不同视图
 
 ****

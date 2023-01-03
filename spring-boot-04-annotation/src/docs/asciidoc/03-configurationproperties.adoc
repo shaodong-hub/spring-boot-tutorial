@@ -2,7 +2,6 @@
 
 :aopSourceDir: ../../main/java/com/github/spring/boot/annotation/infrastructure/config
 
-
 ****
 [source,java]
 ----

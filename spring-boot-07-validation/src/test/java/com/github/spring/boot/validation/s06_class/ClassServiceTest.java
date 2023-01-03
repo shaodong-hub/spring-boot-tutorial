@@ -32,7 +32,7 @@ class ClassServiceTest {
     @ParameterizedTest
     @CsvSource("name,27,学士")
     void check2(String name, int age, String edu) {
-        Assertions.assertThrowsExactly(ConstraintViolationException.class,()-> classService.check(new UserCreateCommand(name, age, edu)));
+        Assertions.assertThrowsExactly(ConstraintViolationException.class, () -> classService.check(new UserCreateCommand(name, age, edu)));
     }
 
 }

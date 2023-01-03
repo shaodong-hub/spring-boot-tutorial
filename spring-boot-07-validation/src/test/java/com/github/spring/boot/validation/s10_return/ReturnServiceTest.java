@@ -27,7 +27,7 @@ class ReturnServiceTest {
     @Test
     void check2() {
         UserCreateCommand command = service.check(new UserCreateCommand("test_name"));
-        Assertions.assertEquals("test_name",command.getUsername());
+        Assertions.assertEquals("test_name", command.getUsername());
     }
 
 }

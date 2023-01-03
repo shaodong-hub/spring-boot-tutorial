@@ -22,14 +22,14 @@ import java.lang.annotation.Target;
 
 @Constraint(validatedBy = CrossValidator.class)
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType. METHOD,ElementType. CONSTRUCTOR, ElementType.ANNOTATION_TYPE })
+@Target({ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.ANNOTATION_TYPE})
 @Documented
 public @interface Cross {
 
     String message() default "{password.confirmation.error}";
 
-    Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 
 }
