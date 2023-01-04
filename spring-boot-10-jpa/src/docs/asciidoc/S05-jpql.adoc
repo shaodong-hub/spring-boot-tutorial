@@ -1,0 +1,10 @@
+=== JPQL
+
+:jpaSourceDir: ../../main/java/com/github/spring/boot/jpa/s05_jpql
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/IUserS05Repository.java[lines=18..100]
+----
+****

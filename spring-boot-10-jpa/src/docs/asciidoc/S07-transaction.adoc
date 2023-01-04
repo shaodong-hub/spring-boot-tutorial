@@ -1,0 +1,11 @@
+=== 事务
+
+:jpaSourceDir: ../../main/java/com/github/spring/boot/jpa/s07_transaction
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/UserS07Service.java[lines=21..100]
+----
+****
+

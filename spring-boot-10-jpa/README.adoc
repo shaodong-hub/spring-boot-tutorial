@@ -25,3 +25,12 @@ include::{sourcedir}/S04-projection.adoc[]
 
 include::{sourcedir}/S05-jpql.adoc[]
 
+include::{sourcedir}/S06-specification.adoc[]
+
+include::{sourcedir}/S07-transaction.adoc[]
+
+include::{sourcedir}/S08-one-to-many.adoc[]
+
+include::{sourcedir}/S09-many-to-many.adoc[]
+
+include::{sourcedir}/S10-one-to-one.adoc[]

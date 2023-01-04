@@ -1,0 +1,14 @@
+=== one to many
+
+:jpaSourceDir: ../../main/java/com/github/spring/boot/jpa/s08_one_to_many
+
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/UserS08Entity.java[lines=37..100]
+----
+****
+
+
+
