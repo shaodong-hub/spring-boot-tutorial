@@ -8,3 +8,46 @@
 include::{jpaSourceDir}/IUserS05Repository.java[lines=18..100]
 ----
 ****
+
+mysql JSON 格式字段
+
+****
+[source,xml]
+----
+<dependency>
+    <groupId>com.vladmihalcea</groupId>
+    <artifactId>hibernate-types-52</artifactId>
+    <version>${hibernate-types.version}</version>
+</dependency>
+----
+****
+
+类上加注解
+
+****
+[source]
+----
+@TypeDef(name = "JSON", typeClass = JsonStringType.class)
+----
+****
+
+字段上加注解
+
+****
+[source]
+----
+@Type(type = "JSON")
+@Column(columnDefinition = "JSON")
+AddressValue address;
+----
+****
+
+****
+[source]
+----
+@Modifying
+@Transactional(rollbackFor = Exception.class)
+@Query("UPDATE UserS05Entity AS user SET user.address = FUNCTION('JSON_REPLACE', user.address,'$.path', :path) WHERE user.id = :id")
+int replace(@Param("id") long id, @Param("path") String path);
+----
+****

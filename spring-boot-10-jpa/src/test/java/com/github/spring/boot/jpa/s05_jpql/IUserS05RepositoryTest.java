@@ -57,12 +57,19 @@ class IUserS05RepositoryTest {
         Assertions.assertEquals(2, optional.get().getLoginCount());
     }
 
+    @Test
+    void replace() {
+        int replace = repository.replace(4L, "test_name");
+        Assertions.assertEquals(1, replace);
+        Optional<UserS05Entity> optional = repository.findById(4L);
+        Assertions.assertTrue(optional.isPresent());
+        Assertions.assertEquals("test_name", optional.get().getAddress().getPath());
+    }
+
     interface IUserVO {
 
         Long getId();
 
         String getUsername();
-
     }
-
 }

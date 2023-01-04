@@ -16,3 +16,11 @@ SET id='3',
     age=30,
     login_count=3,
     last_login_date=CURRENT_TIMESTAMP;
+
+INSERT INTO s05
+SET id='4',
+    username ='username4',
+    age=40,
+    login_count=4,
+    last_login_date=CURRENT_TIMESTAMP,
+    address = '{"name":"junit_name","path":"junit_path"}';
