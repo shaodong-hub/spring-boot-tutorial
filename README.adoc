@@ -24,6 +24,8 @@ include::docs/java_coder.adoc[]
 
 include::docs/http_protocol.adoc[]
 
+include::docs/linux.adoc[]
+
 include::docs/spring_boot_init.adoc[]
 
 include::docs/idea_plugins.adoc[]
