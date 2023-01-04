@@ -1,4 +1,4 @@
-=== Serialization
+=== @Serialization
 :aopSourceDir: ../../main/java/com/github/spring/boot/jackson/infrastructure/common
 
 自定义序列化与反序列化

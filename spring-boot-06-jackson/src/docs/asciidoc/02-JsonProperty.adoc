@@ -1,4 +1,4 @@
-=== JsonProperty
+=== @JsonProperty
 :aopSourceDir: ../../main/java/com/github/spring/boot/jackson/infrastructure/common
 
 因为某些原因前后端同一个属性命名不一致
