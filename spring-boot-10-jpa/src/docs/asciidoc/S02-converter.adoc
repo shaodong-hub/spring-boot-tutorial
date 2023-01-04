@@ -1,9 +1,12 @@
 === 转换器
 
-[stripes=hover,cols="^2, ^3, ^5"]
-|===
-|注解 |说明 |注释
+[caption="",stripes=hover,cols="^2, ^3, ^5,^1"]
+.Parts{counter2:index:0}
 
+|===
+|注解 |注解 |说明 |注释
+
+|{counter:index}
 |Convert
 |标记实体类
 |Column 4, row 1

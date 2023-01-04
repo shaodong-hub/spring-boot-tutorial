@@ -1,0 +1,80 @@
+=== 投影
+:jpaSourceDir: ../../main/java/com/github/spring/boot/jpa/s04_projection
+
+在只读场景下,我们不需要查询整个实体,只需要数据库中某些字段吧,这个时候可以使用投影.
+使用投影也可以防止修改数据库中的数据.
+
+==== 数据库查询 interface 方式投影
+
+基本用法,先定义一个 interface
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/IUserSimpleVO.java[lines=9..15]
+----
+****
+
+新增一个查询方法,如 `<T> Optional<T> findById(long id, Class<T> clz);` ;
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/IUserS04Repository.java[lines=17..100]
+----
+****
+
+使用接口方式还支持 SPEL 表达式,
+
+SPEL 支持
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/IUserComplexVO.java[lines=12..27]
+----
+****
+
+==== 数据库查询 class 方式投影
+
+使用 class 方式进行投影,
+
+NOTE: 注意所有字段均是 `private final`
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/UserSimpleVO.java[lines=12..27]
+----
+****
+
+==== 请求参数绑定投影
+
+http 接口也支持 interface 投影,方式接收
+
+首先在 `interface` 上加 `@ProjectedPayload` 注解, 在对应的方法上加上 `@JsonPath` 注解
+
+https://goapi.163yun.com/doc/chang-jing-ce-shi/chang-jing-yong-li/can-shu-xiao-yan/jsonpi-pei/jsonpathyu-fa.html[jsonpath 语法]
+
+http://jsonpath.com[jsonpath 验证网站]
+
+****
+[source,java]
+----
+include::{jpaSourceDir}/IWebDataBindingProjection.java[lines=12..27]
+----
+****
+
+
+
+
+
+
+
+
+
+
+
+
+
+

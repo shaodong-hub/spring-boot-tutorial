@@ -1,38 +1,48 @@
 === 注解
 
-[stripes=hover,cols="^1, ^2, ^5"]
-|===
-|注解 |说明 |注释
+[caption="",stripes=hover,cols="^1, ^1, ^2, ^5"]
+.Parts{counter2:index:0}
 
-|Entity
+|===
+|序号 |注解 |说明 |注释
+
+|{counter:index}
+|@Entity
 |标记实体类
 |Column 4, row 1
 
-|Table
+|{counter:index}
+|@Table
 |标记表注解
 |Column 4, row 1
 
-|DynamicInsert
+|{counter:index}
+|@DynamicInsert
 |动态插入数据
 |Column 4, row 1
 
-|DynamicUpdate
+|{counter:index}
+|@DynamicUpdate
 |动态更新数据
 |Column 4, row 1
 
-|Id
+|{counter:index}
+|@Id
 |标记主键
 |Column 4, row 1
 
-|GeneratedValue
+|{counter:index}
+|@GeneratedValue
 |主键生成策略
 |Column 4, row 1
 
-|Column
+|{counter:index}
+|@Column
 |表列生成策略
 |Column 4, row 1
 
-|AttributeOverride
+|{counter:index}
+|@AttributeOverride
 |Column 3, row 1
 |Column 4, row 1
 |===

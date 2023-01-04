@@ -1,18 +1,23 @@
-== 领域事件
+=== 领域事件
 
-[stripes=hover,cols="^2, ^3, ^5"]
+[caption="",stripes=hover,cols="^2, ^2, ^3, ^5"]
+.Parts{counter2:index:0}
+
 |===
-|注解 |说明 |注释
+|序号|注解 |说明 |注释
 
-|DomainEvents
+|{counter:index}
+|@DomainEvents
 |领域事件
 |Column 4, row 1
 
-|AfterDomainEventPublication
+|{counter:index}
+|@AfterDomainEventPublication
 |领域事件回调
 |Column 4, row 1
 
-|TransactionalEventListener
+|{counter:index}
+|@TransactionalEventListener
 |领域事件回调
 |Column 4, row 1
 |===
