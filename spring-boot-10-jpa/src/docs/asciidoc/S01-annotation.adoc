@@ -45,6 +45,21 @@
 |@AttributeOverride
 |Column 3, row 1
 |Column 4, row 1
+
+|{counter:index}
+|@Transient
+|Column 3, row 1
+|Column 4, row 1
+
+|{counter:index}
+|@UniqueConstraint
+|标记唯一索引注解
+|@UniqueConstraint(name = "UK_USERNAME", columnNames = {"username"})
+
+|{counter:index}
+|@Index
+|标记索引注解
+|@Index(name = "IDX_NOTE", columnList = "note")
 |===
 
 

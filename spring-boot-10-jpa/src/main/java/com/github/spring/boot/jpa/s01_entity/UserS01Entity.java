@@ -18,7 +18,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  * <p>
@@ -28,7 +30,10 @@ import javax.persistence.Table;
  * @version 0.0.1
  */
 @Entity
-@Table(name = "S01")
+@Table(name = "S01",
+        indexes = {@Index(name = "IDX_NOTE", columnList = "note")},
+        uniqueConstraints = {@UniqueConstraint(name = "UK_USERNAME", columnNames = {"username"})}
+)
 @DynamicInsert
 @DynamicUpdate
 @Builder
@@ -46,7 +51,6 @@ public class UserS01Entity {
     @Embedded
     @AttributeOverride(name = "username", column = @Column(name = "username", nullable = false, columnDefinition = "CHAR(50) COMMENT 'username'"))
     UsernameRecord username;
-
 
     @Column(name = "note", columnDefinition = "CHAR(50) COMMENT 'note'")
     String note;
