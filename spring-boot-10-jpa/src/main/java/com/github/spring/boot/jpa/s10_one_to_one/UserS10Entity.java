@@ -20,6 +20,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -50,10 +51,11 @@ public class UserS10Entity {
     @Column(name = "username", columnDefinition = "VARCHAR(32) COMMENT '姓名'")
     String username;
 
-    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne( fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "address_id")
+    @NotFound(action = NotFoundAction.IGNORE)
     @JsonManagedReference
     @ToString.Exclude
-    @NotFound(action = NotFoundAction.IGNORE)
     AddressS10Entity address;
 }
 

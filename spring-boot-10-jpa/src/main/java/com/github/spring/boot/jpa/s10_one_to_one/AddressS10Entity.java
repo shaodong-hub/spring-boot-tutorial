@@ -51,9 +51,9 @@ public class AddressS10Entity {
     @Column(name = "code", columnDefinition = "VARCHAR(32) COMMENT '类型'")
     String code;
 
-    @OneToOne(targetEntity = UserS10Entity.class, cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    @JsonManagedReference
-    @NotFound(action = NotFoundAction.IGNORE)
-    UserS10Entity user;
+//    @OneToOne(targetEntity = UserS10Entity.class, cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+//    @JoinColumn(name = "user_id")
+//    @JsonManagedReference
+//    @NotFound(action = NotFoundAction.IGNORE)
+//    UserS10Entity user;
 }
