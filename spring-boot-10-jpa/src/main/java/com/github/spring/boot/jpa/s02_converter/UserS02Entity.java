@@ -1,6 +1,7 @@
 package com.github.spring.boot.jpa.s02_converter;
 
 
+import com.github.spring.boot.jpa.s02_converter.converter.MobileConverter;
 import com.github.spring.boot.jpa.s02_converter.converter.UsernameConverter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -54,8 +55,7 @@ public class UserS02Entity {
     @Column(name = "identity", columnDefinition = "VARCHAR(32) COMMENT '身份证'")
     String identity;
 
-//    @Embedded
-//    @Convert(attributeName = "mobile", converter = MobileConverter.class)
-//    @AttributeOverride(name = "mobile", column =@Column(name = "mobile", columnDefinition = "VARCHAR(32) COMMENT '手机号'"))
-//    MobileRecord mobile;
+    @Convert(converter = MobileConverter.class)
+    @Column(columnDefinition = "VARCHAR(32) COMMENT '手机号'")
+    String mobile;
 }
