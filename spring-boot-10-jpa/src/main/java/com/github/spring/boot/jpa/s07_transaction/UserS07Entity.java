@@ -9,6 +9,7 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.Version;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,6 +44,9 @@ public class UserS07Entity {
 
     @Column(name = "username", nullable = false, columnDefinition = "CHAR(100) COMMENT 'username'")
     String username;
+
+    @Version
+    Long version;
 
     public void updateUsername(String username) {
         this.username = username;

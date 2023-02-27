@@ -1,8 +1,7 @@
-package com.github.spring.boot.redis;
+package com.github.spring.boot.spot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * create in 2022/8/6 16:08
@@ -10,12 +9,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @author shishaodong
  * @version 0.0.1
  */
-@EnableScheduling
 @SpringBootApplication
-public class SpringBootRedisApplication {
+public class SpringBootSpotApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootRedisApplication.class, args);
+        SpringApplication.run(SpringBootSpotApplication.class, args);
     }
 
 }

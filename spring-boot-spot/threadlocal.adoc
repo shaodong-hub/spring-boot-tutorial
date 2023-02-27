@@ -1,0 +1,202 @@
+== ThreadLocal,对象引用类型,堆外缓存,零拷贝,中断
+
+=== ThreadLocal
+
+==== ThreadLocal 含义
+[source,jshell]
+----
+public class ThreadLocalMain {
+
+    private static final ThreadLocal<String> THREAD_LOCAL = new ThreadLocal<>();
+
+    private static final CountDownLatch LATCH = new CountDownLatch(3);
+
+    public static void main(String[] args) throws InterruptedException {
+        extracted("Main");
+        new Thread(() -> extracted("Thread1")).start();
+        new Thread(() -> extracted("Thread2")).start();
+        LATCH.await();
+        System.out.println(THREAD_LOCAL.get());
+    }
+
+    private static void extracted(String name) {
+        THREAD_LOCAL.set(name);
+        LATCH.countDown();
+        System.out.println(name + " " + THREAD_LOCAL.get());
+    }
+}
+
+----
+
+同步机制采用了“以时间换空间”的方式，而ThreadLocal采用了“以空间换时间”的方式。前者仅提供一份变量，让不同的线程排队访问，而后者为每一个线程都提供了一份变量，因此可以同时访问而互不影响。
+
+[source,jshell]
+----
+public void set(T value) {
+    Thread t = Thread.currentThread();
+    ThreadLocalMap map = getMap(t);
+    if (map != null) {
+        map.set(this, value);
+    } else {
+        createMap(t, value);
+    }
+}
+----
+
+在这个方法内部我们看到，首先通过getMap(Thread t)方法获取一个和当前线程相关的ThreadLocalMap，然后将变量的值设置到这个ThreadLocalMap对象中，当然如果获取到的ThreadLocalMap对象为空，就通过createMap方法创建。
+
+==== ThreadLocal 多线程解决
+[source,java]
+----
+public class InheritableThreadLocal<T> extends ThreadLocal<T> {
+
+    protected T childValue(T parentValue) {
+        return parentValue;
+    }
+
+    ThreadLocalMap getMap(Thread t) {
+       return t.inheritableThreadLocals;
+    }
+
+    void createMap(Thread t, T firstValue) {
+        t.inheritableThreadLocals = new ThreadLocalMap(this, firstValue);
+    }
+}
+----
+
+==== ThreadLocal 使用场景
+
+==== ThreadLocal 框架中的应用
+
+===== HttpServletRequest
+[source,java]
+----
+@RestController
+public class ThreadLocalController {
+
+    @Resource
+    private HttpServletRequest request3;
+
+    @GetMapping("/thread")
+    public String thread(HttpServletRequest request1) {
+        HttpServletRequest request2 = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        return "123";
+    }
+}
+----
+
+[source,jshell]
+----
+@GetMapping("/demo02")
+public String demo02(@AuthenticationPrincipal UserDetails userDetails) {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    return "123";
+}
+----
+
+===== @Transactional 事务传播
+
+事务的传播(propagation)
+
+Spring 定义了 7 中事务传播行为。
+
+[cols="^1a,^2a,<5a"]
+.事务传播行为{counter2:index:0}
+|===
+^|序号 ^|传播属性 ^|描述
+
+|{counter:index}
+|REQUIRED
+|如果有事务在运行，当前的方法就在这个事务内运行，否则，就启动一个新的事务，并在自己的事务内运行。 +
+Spring默认就是这个传播行为。 +
+子代码如果配置了REQUIRED，那么timeout 之类的配置会失效。配置使用最顶层父类的配置。
+
+|{counter:index}
+|REQUIRES_NEW
+|当前的方法必须启动新事务，并在它自己的事务内运行。如果有事务正在运行，应该将它挂起
+
+|{counter:index}
+|SUPPORTS
+|如果有事务在运行，当前的方法就在这个事务内运行。否则它可以不再晕在事务中。
+
+|{counter:index}
+|NOT_SUPPORTED
+|当前的方法不应该运行在事务中，如果有运行的事务，将它挂起。
+
+|{counter:index}
+|MANDATORY
+|当前的方法必须运行在事务内部，如果没有正在运行的事务，就抛出异常。
+
+|{counter:index}
+|NEVER
+|房钱的方法不应该运行在事务中，如果有运行的事务，就抛出异常。
+
+|{counter:index}
+|NESTED
+|如果有事务在运行，当前的方法就应该在这个事务的嵌套事务内运行，否则，就启动一个新的事务，并在它自己的事务内运行。
+|===
+
+A类
+[source,jshell]
+----
+@Transactional(isolation = Isolation.READ_UNCOMMITTED, propagation = REQUIRED)
+public void method1(Object data){
+    // do something
+    // 调用 B 类
+    method2(data);
+}
+----
+
+B类
+[source,jshell]
+----
+@Transactional(isolation = Isolation.READ_UNCOMMITTED, propagation = REQUIRES_NEW)
+public void method2(Object data){
+    // do something
+}
+----
+
+在 Spring 中 很多以 ContextHolder 结尾的都是 基于 ThreadLocal 实现的
+
+==== ThreadLocal 内存泄露问题
+
+=== Java 对象引用类型
+
+==== 强引用
+强引用是我们最常见的对象，它属于不可回收资源，垃圾回收器（后面简称G C）绝对不会回收它，即使是内存不足，JVM宁愿抛出 OutOfMemoryErrorM 异常，使程序终止，也不会来回收强引用对象。
+
+==== 软引用
+如果对象是软引用，那它的性质属于可有可无，因为内存空间充足的情况下，G C不会回收它，但是内存空间紧张，GC发现它仅有软引用，就会回收该对象，所以软引用对象适合作为内存敏感的缓存对象。
+[source,jshell]
+----
+SoftReference<String> softReference = new SoftReference<>("123");
+----
+
+==== 弱引用
+弱引用对象相对软引用对象具有更短暂的生命周期，只要GC发现它仅有弱引用，不管内存空间是否充足，都会回收它，不过 GC 是一个优先级很低的线程，因此不一定会很快发现那些仅有弱引用的对象。
+
+[source,jshell]
+----
+WeakReference<String> weakReference = new WeakReference<>("345");
+----
+
+==== 虚引用
+顾名思义，虚引用形同虚设，与其他几种引用不同，虚引用不会决定对象的生命周期。
+如果一个对象仅有虚引用，那它就和没有任何引用一样，任何时候都可能被 GC 回收。
+
+=== 堆外缓存
+
+
+==== 堆外缓存回收过程
+
+
+
+
+
+
+
+
+
+
+
+

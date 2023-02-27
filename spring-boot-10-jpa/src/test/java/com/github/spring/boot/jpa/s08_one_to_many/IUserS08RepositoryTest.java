@@ -13,7 +13,9 @@ import org.springframework.test.context.jdbc.SqlMergeMode;
 
 import javax.annotation.Resource;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 /**
  * create in 2022/12/14 13:06
@@ -67,9 +69,40 @@ class IUserS08RepositoryTest {
         repository.save(s08Entity);
     }
 
+    @Test
+    @Sql(scripts = "classpath:db/S08-2.sql")
+    @SqlMergeMode(SqlMergeMode.MergeMode.OVERRIDE)
+    @Rollback(value = false)
+    void findByBannersContains() {
+        List<UserS08Entity> list = repository.findByBannersContains();
+        list.forEach(System.out::println);
+    }
+
+    @Test
+    @Sql(scripts = "classpath:db/S08-2.sql")
+    @SqlMergeMode(SqlMergeMode.MergeMode.OVERRIDE)
+    @Rollback(value = false)
+    void findByBannersContains2() {
+        List<UserS08VO> list = repository.findByBannersByImages();
+        list.forEach(x -> System.out.println(x.getId()));
+    }
+
+    @Test
+    @Sql(scripts = "classpath:db/S08-2.sql")
+    @SqlMergeMode(SqlMergeMode.MergeMode.OVERRIDE)
+    @Rollback(value = false)
+    void findImage() {
+        Optional<ImageS08Entity> optional = repository.findImage();
+        optional.ifPresent(System.out::println);
+    }
+
 
     @SneakyThrows
     private void extracted(UserS08Entity users08Entity) {
         System.out.println("----------- " + new ObjectMapper().writeValueAsString(users08Entity));
+    }
+
+    interface User08VO {
+        Long getId();
     }
 }

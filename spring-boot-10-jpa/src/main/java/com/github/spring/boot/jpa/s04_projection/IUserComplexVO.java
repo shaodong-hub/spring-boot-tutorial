@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
+ *
+ * SPEL
+ *
  * create in 2022/12/14 20:25
  *
  * @author shishaodong

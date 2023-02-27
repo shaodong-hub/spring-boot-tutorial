@@ -38,7 +38,7 @@ class User04FacadeTest {
 
     @Test
     void projection() throws Exception {
-        mvc.perform(post("user04")
+        mvc.perform(post("/user04")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(IoUtil.read(data.getInputStream(), StandardCharsets.UTF_8)))
                 .andDo(print())

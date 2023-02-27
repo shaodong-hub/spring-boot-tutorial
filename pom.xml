@@ -21,6 +21,7 @@
         <module>spring-boot-07-validation</module>
         <module>spring-boot-10-jpa</module>
         <module>spring-boot-08-redis</module>
+        <module>spring-boot-spot</module>
     </modules>
 
     <properties>

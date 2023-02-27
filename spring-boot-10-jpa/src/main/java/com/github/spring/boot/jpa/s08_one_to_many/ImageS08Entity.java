@@ -5,8 +5,12 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+import org.apache.commons.lang3.builder.ToStringExclude;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -31,7 +35,7 @@ import javax.persistence.Table;
 @DynamicUpdate
 @DynamicInsert
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Data
+@Getter@Setter@ToString(exclude="user")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
