@@ -19,18 +19,18 @@
         <module>spring-boot-04-annotation</module>
         <module>spring-boot-06-jackson</module>
         <module>spring-boot-07-validation</module>
-        <module>spring-boot-10-jpa</module>
         <module>spring-boot-08-redis</module>
-        <module>spring-boot-spot</module>
+        <module>spring-boot-10-jpa</module>
         <module>spring-boot-11-mongo</module>
+        <module>spring-boot-spot</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <hutool.version>5.8.11</hutool.version>
         <jetbrains.version>23.1.0</jetbrains.version>
-        <spring.boot.version>2.7.5</spring.boot.version>
-        <snakeyaml.version>1.33</snakeyaml.version>
+        <spring.boot.version>2.7.9</spring.boot.version>
+        <snakeyaml.version>2.0</snakeyaml.version>
     </properties>
 
     <dependencyManagement>

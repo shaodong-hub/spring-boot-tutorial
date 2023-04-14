@@ -10,4 +10,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @version 0.0.1
  */
 public interface IAutoCreateRepository extends PagingAndSortingRepository<AutoCreateEntity, String> {
+
 }

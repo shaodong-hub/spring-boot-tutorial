@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Type;
@@ -43,7 +44,8 @@ public class UserS05Entity {
     @Column(nullable = false, columnDefinition = "BIGINT COMMENT 'id'")
     Long id;
 
-    @Column(name = "username", nullable = false, columnDefinition = "CHAR(50) COMMENT 'username'")
+    @Comment("用户名")
+    @Column(name = "username", nullable = false, columnDefinition = "CHAR(50)")
     String username;
 
     @Column(name = "age", nullable = false, columnDefinition = "SMALLINT COMMENT 'age'")
@@ -58,5 +60,8 @@ public class UserS05Entity {
     @Type(type = "JSON")
     @Column(columnDefinition = "JSON")
     AddressValue address;
+
+    @Column(name = "status", nullable = false, columnDefinition = "TINYINT COMMENT 'login_count'")
+    Integer status;
 
 }

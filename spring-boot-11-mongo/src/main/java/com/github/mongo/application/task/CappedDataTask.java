@@ -4,6 +4,7 @@ import com.github.mongo.domain.entity.CappedDataEntity;
 import com.github.mongo.domain.repository.ICappedDataRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,6 @@ public class CappedDataTask {
     @Scheduled(fixedRate = 1)
     public void task() {
         log.info("CappedDataTask");
-        repository.save(CappedDataEntity.builder().localDateTime(LocalDateTime.now()).build());
+        repository.save(CappedDataEntity.builder().localDateTime(LocalDateTime.now()).phone(RandomStringUtils.randomAlphabetic(6)).build());
     }
 }

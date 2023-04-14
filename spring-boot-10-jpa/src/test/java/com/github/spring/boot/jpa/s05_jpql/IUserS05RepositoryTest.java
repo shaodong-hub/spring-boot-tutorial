@@ -1,5 +1,8 @@
 package com.github.spring.boot.jpa.s05_jpql;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -31,6 +34,18 @@ class IUserS05RepositoryTest {
 
     @Resource
     private IUserS05Repository repository;
+
+    ObjectMapper objectMapper = new ObjectMapper();
+    {
+        objectMapper.registerModule(new JavaTimeModule());
+    }
+
+    @Test
+    void findAll() throws JsonProcessingException {
+        Page<UserS05Entity> page = repository.findAll(Pageable.unpaged());
+        String s = objectMapper.writeValueAsString(page);
+        System.out.println(s);
+    }
 
     @Test
     void findAllByAvg() {
@@ -65,6 +80,8 @@ class IUserS05RepositoryTest {
         Assertions.assertTrue(optional.isPresent());
         Assertions.assertEquals("test_name", optional.get().getAddress().getPath());
     }
+
+
 
     interface IUserVO {
 
