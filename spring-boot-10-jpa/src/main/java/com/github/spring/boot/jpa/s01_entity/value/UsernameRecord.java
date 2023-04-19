@@ -1,5 +1,6 @@
 package com.github.spring.boot.jpa.s01_entity.value;
 
+import jakarta.persistence.Embeddable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 /**

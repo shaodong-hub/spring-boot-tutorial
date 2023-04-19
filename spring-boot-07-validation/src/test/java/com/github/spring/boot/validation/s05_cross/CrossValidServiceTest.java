@@ -1,11 +1,10 @@
 package com.github.spring.boot.validation.s05_cross;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2022/8/6 17:47

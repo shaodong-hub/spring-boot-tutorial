@@ -3,6 +3,7 @@
 === ThreadLocal
 
 ==== ThreadLocal 含义
+
 [source,jshell]
 ----
 public class ThreadLocalMain {
@@ -46,6 +47,7 @@ public void set(T value) {
 在这个方法内部我们看到，首先通过getMap(Thread t)方法获取一个和当前线程相关的ThreadLocalMap，然后将变量的值设置到这个ThreadLocalMap对象中，当然如果获取到的ThreadLocalMap对象为空，就通过createMap方法创建。
 
 ==== ThreadLocal 多线程解决
+
 [source,java]
 ----
 public class InheritableThreadLocal<T> extends ThreadLocal<T> {
@@ -69,6 +71,7 @@ public class InheritableThreadLocal<T> extends ThreadLocal<T> {
 ==== ThreadLocal 框架中的应用
 
 ===== HttpServletRequest
+
 [source,java]
 ----
 @RestController
@@ -137,6 +140,7 @@ Spring默认就是这个传播行为。 +
 |===
 
 A类
+
 [source,jshell]
 ----
 @Transactional(isolation = Isolation.READ_UNCOMMITTED, propagation = REQUIRED)
@@ -148,6 +152,7 @@ public void method1(Object data){
 ----
 
 B类
+
 [source,jshell]
 ----
 @Transactional(isolation = Isolation.READ_UNCOMMITTED, propagation = REQUIRES_NEW)
@@ -163,16 +168,20 @@ public void method2(Object data){
 === Java 对象引用类型
 
 ==== 强引用
+
 强引用是我们最常见的对象，它属于不可回收资源，垃圾回收器（后面简称G C）绝对不会回收它，即使是内存不足，JVM宁愿抛出 OutOfMemoryErrorM 异常，使程序终止，也不会来回收强引用对象。
 
 ==== 软引用
+
 如果对象是软引用，那它的性质属于可有可无，因为内存空间充足的情况下，G C不会回收它，但是内存空间紧张，GC发现它仅有软引用，就会回收该对象，所以软引用对象适合作为内存敏感的缓存对象。
+
 [source,jshell]
 ----
 SoftReference<String> softReference = new SoftReference<>("123");
 ----
 
 ==== 弱引用
+
 弱引用对象相对软引用对象具有更短暂的生命周期，只要GC发现它仅有弱引用，不管内存空间是否充足，都会回收它，不过 GC 是一个优先级很低的线程，因此不一定会很快发现那些仅有弱引用的对象。
 
 [source,jshell]
@@ -181,11 +190,10 @@ WeakReference<String> weakReference = new WeakReference<>("345");
 ----
 
 ==== 虚引用
-顾名思义，虚引用形同虚设，与其他几种引用不同，虚引用不会决定对象的生命周期。
-如果一个对象仅有虚引用，那它就和没有任何引用一样，任何时候都可能被 GC 回收。
+
+顾名思义，虚引用形同虚设，与其他几种引用不同，虚引用不会决定对象的生命周期。 如果一个对象仅有虚引用，那它就和没有任何引用一样，任何时候都可能被 GC 回收。
 
 === 堆外缓存
-
 
 ==== 堆外缓存回收过程
 

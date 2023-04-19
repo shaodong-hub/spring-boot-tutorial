@@ -1,20 +1,13 @@
 package com.github.spring.boot.jpa.s03_event;
 
+import jakarta.annotation.Resource;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
-
-import javax.annotation.Resource;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
 
 /**
  * create in 2022/12/8 17:52
@@ -41,7 +34,6 @@ class IUserS03RepositoryTest {
         repository.save(domain);
 //        Mockito.verify(domainService, times(1)).userEvent(any());
     }
-
 
 
 }

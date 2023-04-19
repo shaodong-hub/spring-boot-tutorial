@@ -1,12 +1,11 @@
 package com.github.mongo.infrastructure.config;
 
 import com.github.mongo.domain.entity.CappedDataEntity;
+import jakarta.annotation.Resource;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.mongodb.core.CollectionOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2023/3/27 14:24

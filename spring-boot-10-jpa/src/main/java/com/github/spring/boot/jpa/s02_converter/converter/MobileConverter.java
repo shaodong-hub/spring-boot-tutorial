@@ -1,15 +1,11 @@
 package com.github.spring.boot.jpa.s02_converter.converter;
 
+import jakarta.persistence.AttributeConverter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.ObjectProvider;
-import org.springframework.context.annotation.Bean;
-
-import javax.annotation.Resource;
-import javax.persistence.AttributeConverter;
-import java.util.function.Supplier;
 
 /**
  * create in 2022/12/14 14:28

@@ -1,12 +1,12 @@
 package com.github.spring.boot.validation.s06_class;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import javax.validation.ConstraintViolationException;
 
 /**

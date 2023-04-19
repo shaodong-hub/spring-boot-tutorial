@@ -1,13 +1,12 @@
 package com.github.spring.boot.jpa.s11_annotation;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2023/4/13 21:39

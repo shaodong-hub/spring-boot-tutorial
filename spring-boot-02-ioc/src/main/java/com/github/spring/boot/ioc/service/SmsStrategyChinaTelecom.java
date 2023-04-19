@@ -1,10 +1,9 @@
 package com.github.spring.boot.ioc.service;
 
 import com.github.spring.boot.ioc.pojo.SmsSendCommand;
+import jakarta.annotation.Resource;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2022/7/11 21:35

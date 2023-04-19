@@ -1,6 +1,7 @@
 package com.github.spring.boot.jpa.s01_entity;
 
 import com.github.spring.boot.jpa.s01_entity.value.UsernameRecord;
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -10,7 +11,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlMergeMode;
 
-import javax.annotation.Resource;
 import java.util.Optional;
 
 

@@ -1,10 +1,9 @@
 package com.github.spring.boot.validation.s11_sequence;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2022/8/6 18:34

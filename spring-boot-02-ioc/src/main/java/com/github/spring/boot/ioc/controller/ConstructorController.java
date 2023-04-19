@@ -2,11 +2,10 @@ package com.github.spring.boot.ioc.controller;
 
 import com.github.spring.boot.ioc.pojo.SmsSendCommand;
 import com.github.spring.boot.ioc.service.SmsStrategyChinaTelecom;
+import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2022/7/11 21:50

@@ -1,20 +1,25 @@
 package com.github.spring.boot.jpa.s12_json;
 
-import com.vladmihalcea.hibernate.type.json.JsonStringType;
+import io.hypersistence.utils.hibernate.type.json.JsonType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
+import org.hibernate.type.SqlTypes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.List;
 
 /**
@@ -27,10 +32,13 @@ import java.util.List;
 @DynamicInsert
 @DynamicUpdate
 @Table(name = "s12_json")
+@Data
+@Builder
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@TypeDef(name = "JSON", typeClass = JsonStringType.class)
-public class UserBookEntity {
+public class UserS12Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,9 +48,8 @@ public class UserBookEntity {
     @Column(nullable = false, columnDefinition = "VARCHAR(50) COMMENT '用户名'")
     String username;
 
-
-    @Type(type = "JSON")
-    @Column(columnDefinition = "JSON")
+//    @Type(JsonType.class)
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(columnDefinition = "json")
     List<String> books;
-
 }

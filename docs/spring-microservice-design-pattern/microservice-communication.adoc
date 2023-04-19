@@ -3,11 +3,9 @@
 服务可以使用基于同步请求/响应的通信机制,例如: HTTP REST 或 gRPC.
 也可以使用基于消息的通信机制,比如 AMQP.
 
-远程过程调用
-OpenFeign、RestTemplate、dubbo、gRPC、
+远程过程调用 OpenFeign、RestTemplate、dubbo、gRPC、
 
-断路器
-hystrix、Retry、Resilience
+断路器 hystrix、Retry、Resilience
 
 [source,xml]
 ----
@@ -49,16 +47,11 @@ public class RetryServiceImpl {
 }
 ----
 
+服务注册发现 eureka、zookeeper、consul、nacos、k8s service
 
-服务注册发现
-eureka、zookeeper、consul、nacos、k8s service
+异步消息 rocketmq, kafka
 
-异步消息
-rocketmq, kafka
-
-交互方式
-同步：一对一，请求/响应，
-异步：一对多，异步请求/响应，单向通知， 发布订阅，发布/异步响应
+交互方式 同步：一对一，请求/响应， 异步：一对多，异步请求/响应，单向通知， 发布订阅，发布/异步响应
 
 
 

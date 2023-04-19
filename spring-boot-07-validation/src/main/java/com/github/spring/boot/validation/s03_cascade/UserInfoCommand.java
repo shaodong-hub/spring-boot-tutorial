@@ -27,7 +27,8 @@ import java.util.Map;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserInfoCommand {
 
-    @Min(1) @Max(150)
+    @Min(1)
+    @Max(150)
     Integer age;
 
     @Valid

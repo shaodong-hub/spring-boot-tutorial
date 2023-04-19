@@ -1,5 +1,6 @@
 package com.github.spring.boot.validation.s03_cascade;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
@@ -9,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import javax.validation.ConstraintViolationException;
 import java.time.LocalDate;
 import java.util.HashMap;

@@ -1,11 +1,12 @@
 package com.github.spring.boot.jpa.s07_transaction;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+
 
 /**
  * create in 2022/12/15 14:27

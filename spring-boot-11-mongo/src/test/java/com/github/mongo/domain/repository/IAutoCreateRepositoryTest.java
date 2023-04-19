@@ -1,13 +1,13 @@
 package com.github.mongo.domain.repository;
 
 import com.github.mongo.domain.entity.AutoCreateEntity;
+import jakarta.annotation.Resource;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 
-import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -38,11 +38,9 @@ class IAutoCreateRepositoryTest {
 
 
     @Test
-    void save(){
+    void save() {
 
     }
-
-
 
 
     @AfterEach

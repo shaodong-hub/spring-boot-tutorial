@@ -1,10 +1,10 @@
 package com.github.spring.boot.validation.s07_manual;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import java.time.LocalDate;
 
 /**

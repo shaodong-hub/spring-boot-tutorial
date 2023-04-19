@@ -1,8 +1,8 @@
 package com.github.spring.boot.validation.s04_custom;
 
+import jakarta.annotation.Resource;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 

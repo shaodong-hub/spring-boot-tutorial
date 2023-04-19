@@ -2,12 +2,11 @@ package com.github.spring.boot.aop.application.service;
 
 import com.github.spring.boot.aop.application.ArgsCommand;
 import com.github.spring.boot.aop.application.DivCommand;
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2022/7/13 21:27

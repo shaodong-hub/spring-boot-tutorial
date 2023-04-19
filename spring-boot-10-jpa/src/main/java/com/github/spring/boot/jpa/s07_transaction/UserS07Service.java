@@ -1,5 +1,6 @@
 package com.github.spring.boot.jpa.s07_transaction;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.jetbrains.annotations.NotNull;
@@ -8,7 +9,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 

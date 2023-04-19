@@ -1,9 +1,8 @@
 package com.github.spring.boot.jpa.s02_converter.converter;
 
+import jakarta.persistence.AttributeConverter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-
-import javax.persistence.AttributeConverter;
 
 /**
  * create in 2022/12/14 14:31

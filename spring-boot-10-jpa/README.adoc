@@ -4,18 +4,10 @@
 :sourcedir: src/docs/asciidoc
 :numbered:
 
-
 为什么?
 
-
 能做什么?
-redis
-mongodb
-es
-neo4j
-
-
-
+redis mongodb es neo4j
 
 ****
 [source,xml]
@@ -26,7 +18,6 @@ neo4j
 </dependency>
 ----
 ****
-
 
 include::{sourcedir}/S01-annotation.adoc[]
 

@@ -3,6 +3,15 @@ package com.github.spring.boot.jpa.s02_converter;
 
 import com.github.spring.boot.jpa.s02_converter.converter.MobileConverter;
 import com.github.spring.boot.jpa.s02_converter.converter.UsernameConverter;
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,16 +21,6 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Convert;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
  * create in 2022/12/8 16:44

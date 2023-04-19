@@ -2,7 +2,6 @@
 
 [caption="",stripes=hover,cols="^2, ^2, ^3, ^5"]
 .Parts{counter2:index:0}
-
 |===
 |序号|注解 |说明 |注释
 

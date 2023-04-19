@@ -1,28 +1,20 @@
 = 基于 Spring 微服务代码架构设计
 
 == 微服务代码架构风格
-分层架构
-六边形架构
 
+分层架构 六边形架构
 
 == 微服务模块拆分策略
 
 == 微服务中的查询实现
 
+API 组合器 query
 
-
-API 组合器
-query
-
-queryA ServiceA DB-A
-queryB ServiceB DB-B
-queryC ServiceC DB-C
-
+queryA ServiceA DB-A queryB ServiceB DB-B queryC ServiceC DB-C
 
 findOrderAggregationById 他将 OrderId 作为参数进行查询并返回 UserDetail 对象视图提供给前端展示;
 
 订单状态视图包含商品的基本信息, 订单状态, 付款状态, 配送状态
-
 
 order状态
 
@@ -30,51 +22,27 @@ GoodService,OrderService,PaymentService,DeliveryService;
 
 CQRS
 
-
-
-
-
 == 微服务事务管理
-分布式事务
-幂等
 
-
-
-
+分布式事务 幂等
 
 == 微服务中的业务实现
 
-
-
 == 微服务中的逻辑实现
-
 
 == 微服务中的外部接口管理
 
-什么是松耦合
-依赖抽象而不依赖具体，防腐层
-凡是又有可能变化的地方都要写 interface
+什么是松耦合 依赖抽象而不依赖具体，防腐层 凡是又有可能变化的地方都要写 interface
 
 == 微服务之间的依赖管理
-中间包
-BOM 管理
 
-
+中间包 BOM 管理
 
 == 微服务单元测试
 
-
 == 微服务应用部署
 
-
-
-
-
-一些语义
-findXxx，有可能找到也可能找不到。所以返回值可能为 null，可以返回为 Optional；
-generateXxxx ，每次调用该方法返回的数据都不一样；
-getXxx，每次调用该方法返回的数据都一样；
-fillXxx，对传入的集合或者对象进行填充数据；
+一些语义 findXxx，有可能找到也可能找不到。所以返回值可能为 null，可以返回为 Optional； generateXxxx ，每次调用该方法返回的数据都不一样； getXxx，每次调用该方法返回的数据都一样； fillXxx，对传入的集合或者对象进行填充数据；
 
 
 

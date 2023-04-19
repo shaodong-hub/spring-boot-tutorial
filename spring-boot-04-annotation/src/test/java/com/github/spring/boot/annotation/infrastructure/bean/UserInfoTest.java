@@ -1,12 +1,12 @@
 package com.github.spring.boot.annotation.infrastructure.bean;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
-import javax.annotation.Resource;
 import java.util.Map;
 
 /**

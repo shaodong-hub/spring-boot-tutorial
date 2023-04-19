@@ -1,10 +1,9 @@
 package com.github.spring.boot.validation.s12_property;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2022/8/6 18:09

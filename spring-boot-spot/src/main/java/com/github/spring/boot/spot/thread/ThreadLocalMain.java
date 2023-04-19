@@ -29,7 +29,7 @@ public class ThreadLocalMain {
         System.out.println(name + " " + THREAD_LOCAL.get());
     }
 
-    private static void soft(){
+    private static void soft() {
         SoftReference<String> softReference = new SoftReference<>("123");
         WeakReference<String> weakReference = new WeakReference<>("345");
     }

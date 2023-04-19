@@ -1,28 +1,25 @@
 package com.github.spring.boot.jpa.s08_one_to_many;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /**
  * create in 2022/12/14 10:44
@@ -35,7 +32,9 @@ import javax.persistence.Table;
 @DynamicUpdate
 @DynamicInsert
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Getter@Setter@ToString(exclude="user")
+@Getter
+@Setter
+@ToString(exclude = "user")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

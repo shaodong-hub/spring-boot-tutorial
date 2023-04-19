@@ -1,12 +1,12 @@
 package com.github.spring.boot.jpa.s02_converter;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 /**

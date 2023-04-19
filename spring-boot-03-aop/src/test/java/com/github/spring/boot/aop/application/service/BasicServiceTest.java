@@ -1,14 +1,13 @@
 package com.github.spring.boot.aop.application.service;
 
 import com.github.spring.boot.aop.application.DivCommand;
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import javax.annotation.Resource;
 
 /**
  * create in 2022/7/13 21:07

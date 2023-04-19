@@ -12,8 +12,8 @@
     <artifactId>spring-boot-01-params</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <commons-io.version>2.11.0</commons-io.version>
     </properties>
 

@@ -2,7 +2,6 @@
 
 :jpaSourceDir: ../../main/java/com/github/spring/boot/jpa/s09_many_to_many
 
-
 ****
 [source,java]
 ----

@@ -1,12 +1,12 @@
 package com.github.spring.boot.jpa.s11_annotation.parent;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.Parent;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 /**

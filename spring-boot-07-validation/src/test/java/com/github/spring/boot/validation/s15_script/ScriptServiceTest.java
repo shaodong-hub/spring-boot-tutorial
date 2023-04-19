@@ -1,9 +1,9 @@
 package com.github.spring.boot.validation.s15_script;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import java.util.Collections;
 
 /**

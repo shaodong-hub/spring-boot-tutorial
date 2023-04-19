@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @version 0.0.1
  */
 @Component
-public class PasswordProviderImpl implements IPasswordProvider{
+public class PasswordProviderImpl implements IPasswordProvider {
     @Override
     public String getPassword() {
         return "---------------------";

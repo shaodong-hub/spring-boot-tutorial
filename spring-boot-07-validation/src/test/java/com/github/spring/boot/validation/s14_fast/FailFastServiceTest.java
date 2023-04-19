@@ -1,6 +1,7 @@
 package com.github.spring.boot.validation.s14_fast;
 
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -9,7 +10,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import javax.annotation.Resource;
 import javax.validation.ConstraintViolationException;
 import java.time.LocalDate;
 

@@ -1,5 +1,6 @@
 package com.github.spring.boot.jpa.s05_jpql;
 
+import io.hypersistence.utils.hibernate.type.json.JsonType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,17 +10,16 @@ import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.time.LocalDateTime;
-import com.vladmihalcea.hibernate.type.json.JsonStringType;
 
 /**
  * create in 2022/12/14 21:39
@@ -36,7 +36,6 @@ import com.vladmihalcea.hibernate.type.json.JsonStringType;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@TypeDef(name = "JSON", typeClass = JsonStringType.class)
 public class UserS05Entity {
 
     @Id
@@ -57,7 +56,7 @@ public class UserS05Entity {
     @Column(name = "login_count", nullable = false, columnDefinition = "INT COMMENT 'login_count'")
     Integer loginCount;
 
-    @Type(type = "JSON")
+    @Type(JsonType.class)
     @Column(columnDefinition = "JSON")
     AddressValue address;
 
