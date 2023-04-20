@@ -23,6 +23,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Where;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -64,4 +65,9 @@ public class OneEntity {
     @JsonManagedReference
     @Where(clause = "type = 2")
     Map<String, ManyEntity> type2;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "one_id")
+    @JsonManagedReference
+    List<ManyEntity> allList;
 }

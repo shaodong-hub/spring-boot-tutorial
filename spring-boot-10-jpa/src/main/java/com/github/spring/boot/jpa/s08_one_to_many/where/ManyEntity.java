@@ -1,10 +1,8 @@
 package com.github.spring.boot.jpa.s08_one_to_many.where;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -50,7 +48,7 @@ public class ManyEntity {
     @Column(name = "one_id", insertable = false, updatable = false)
     Long oneId;
 
-    @ManyToOne(targetEntity = OneEntity.class, cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @ManyToOne(targetEntity = OneEntity.class)
     @JsonBackReference
     OneEntity user;
 }

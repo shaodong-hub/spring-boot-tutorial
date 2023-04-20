@@ -9,6 +9,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * create in 2023/4/19 15:10
@@ -38,4 +39,8 @@ class IUserBookRepositoryTest {
         data.forEach(System.out::println);
     }
 
+    @Test
+    void find() {
+//        repository.find().forEach(System.out::println);
+    }
 }
