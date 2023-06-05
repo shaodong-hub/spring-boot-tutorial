@@ -13,6 +13,7 @@
     <description>spring-boot-tutorial</description>
 
     <modules>
+        <module>spring-boot-spot</module>
         <module>spring-boot-01-params</module>
         <module>spring-boot-02-ioc</module>
         <module>spring-boot-03-aop</module>
@@ -22,19 +23,27 @@
         <module>spring-boot-08-redis</module>
         <module>spring-boot-10-jpa</module>
         <module>spring-boot-11-mongo</module>
-        <module>spring-boot-spot</module>
+        <module>spring-boot-12-kafka</module>
+        <module>spring-boot-13-actuator</module>
+        <module>spring-boot-09-cache</module>
     </modules>
 
     <properties>
         <java.version>17</java.version>
         <hutool.version>5.8.11</hutool.version>
+        <snakeyaml.version>2.0</snakeyaml.version>
         <jetbrains.version>23.1.0</jetbrains.version>
-        <spring.boot.version>3.0.5</spring.boot.version>
+        <spring.boot.version>3.1.0</spring.boot.version>
         <snakeyaml.version>2.0</snakeyaml.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-core</artifactId>
@@ -77,5 +86,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
