@@ -4,7 +4,8 @@
 :sourcedir: src/docs/asciidoc
 :numbered:
 
-
+=== 打包成镜像命令
+****
 目前 SpringBoot 支持直接打包成 docker 镜像
 
 [source, shell]
@@ -12,4 +13,187 @@
 # 打成 JAR
 mvn clean spring-boot:build-image -Dmaven.test.skip
 ----
+****
 
+=== 执行打包
+****
+自动打包时需要两个镜像, 一个是构建镜像(paketobuildpacks/builder), 一个是运行镜像(paketobuildpacks/run)
+
+构建镜像类似 Jenkins, 会执行 docker build 命令.
+
+运行镜像 提供了运行时基础镜像.
+****
+
+=== 打镜像说明
+
+****
+执行 build 期间会从 github 和 bellsoft 拉取一些资源, 由于一些原因会经常拉取失败.
+****
+
+=== 一份配置
+
+****
+[source, xml]
+----
+<plugins>
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-maven-plugin</artifactId>
+		<configuration>
+			<excludes>
+				<exclude>
+					<groupId>org.projectlombok</groupId>
+					<artifactId>lombok</artifactId>
+				</exclude>
+			</excludes>
+			<excludeDevtools>false</excludeDevtools>
+			<image>
+				<!--要使用的构建器映像的名称。默认：paketobuildpacks/builder:base-->
+				<builder>registry.cn-hangzhou.aliyuncs.com/shishaodong/paketobuildpacks_builder:0.3.261-base</builder>
+				<!-- 运行时 Image -->
+				<runImage>registry.cn-hangzhou.aliyuncs.com/shishaodong/paketobuildpacks_run:1.2.70-base-cnb</runImage>
+				<!--映像生成的映像的名称。-->
+				<!--suppress UnresolvedMavenProperty -->
+				<name>
+					registry.cn-hangzhou.aliyuncs.com/shishaodong/${project.artifactId}:${project.version}-${git.commit.id.abbrev}
+				</name>
+				<env>
+					<BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
+					<BPE_OVERRIDE_LANG>en_US.UTF-8</BPE_OVERRIDE_LANG>
+					<BPE_OVERRIDE_LC_ALL>en_US.UTF-8</BPE_OVERRIDE_LC_ALL>
+					<BPE_OVERRIDE_TZ>Asia/Shanghai</BPE_OVERRIDE_TZ>
+				</env>
+				<!-- 拉取镜像的策略，可选的值：ALWAYS, NEVER, IF_NOT_PRESENT。默认 ALWAYS-->
+				<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				<!--是否需要在建立缓存前清理缓存。默认false-->
+				<cleanCache>false</cleanCache>
+				<!-- 启用构造器操作的详细日志记录。默认false-->
+				<verboseLogging>true</verboseLogging>
+				<!-- 执行完build 自动push。默认 false -->
+				<publish>false</publish>
+				<!-- mvn clean spring-boot:build-image -Dproject.path=/绝对路径/spring-boot-examples -f pom.xml -->
+				<bindings>
+					<binding>
+						${project.basedir}/k8s/buildpack/bellsoft-liberica/buildpack.toml:/cnb/buildpacks/paketo-buildpacks_bellsoft-liberica/10.2.3/buildpack.toml
+					</binding>
+					<binding>
+						${project.basedir}/k8s/buildpack/spring-boot/buildpack.toml:/cnb/buildpacks/paketo-buildpacks_spring-boot/5.25.1/buildpack.toml
+					</binding>
+					<binding>
+						${project.basedir}/k8s/buildpack/syft/buildpack.toml:/cnb/buildpacks/paketo-buildpacks_syft/1.30.1/buildpack.toml
+					</binding>
+				</bindings>
+			</image>
+			<docker>
+				<tlsVerify>false</tlsVerify>
+			</docker>
+		</configuration>
+	</plugin>
+	<!-- 打包时加入当前 GIT 提交信息 -->
+	<plugin>
+		<groupId>io.github.git-commit-id</groupId>
+		<artifactId>git-commit-id-maven-plugin</artifactId>
+		<executions>
+			<execution>
+				<id>get-the-git-infos</id>
+				<phase>initialize</phase>
+				<goals>
+					<goal>revision</goal>
+				</goals>
+			</execution>
+		</executions>
+		<configuration>
+			<offline>true</offline>
+			<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+			<!-- git.commit.id.abbrev属性值的长度，取值范围在[2, 40]，默认值7 -->
+			<abbrevLength>8</abbrevLength>
+		</configuration>
+	</plugin>
+</plugins>
+----
+****
+
+****
+配置说明
+
+|===
+|选项 |说明 |可选性 |默认项
+
+|builder
+|要使用的构建器映像的名称。
+|Column 3, row 1
+|默认：paketobuildpacks/builder:base
+
+|runImage
+|运行时镜像
+|Column 3, row 2
+|paketobuildpacks/run
+
+|name
+|打包成镜像的名称
+|Column 3, row 3
+|Column 4, row 3
+
+|env
+|环境变量
+|Column 3, row 4
+|Column 4, row 4
+
+|pullPolicy
+|拉取镜像策略
+|ALWAYS, NEVER, IF_NOT_PRESENT
+|ALWAYS
+
+|cleanCache
+|是否需要在建立缓存前清理缓存
+|true,false
+|默认false
+
+|verboseLogging
+|启用构造器操作的详细日志记录
+|true,false
+|默认false
+
+|publish
+|执行完build 自动push。
+|true,false
+|默认 false
+
+|binding
+|替换 builder 镜像里的文件
+|Column 3, row 9
+|Column 4, row 9
+
+|tlsVerify
+|Column 2, row 10
+|Column 3, row 10
+|Column 4, row 10
+|===
+****
+
+k8s/buildpack/bellsoft-liberica/buildpack.toml
+****
+
+[source, toml]
+----
+include::k8s/buildpack/bellsoft-liberica/buildpack.toml[]
+----
+****
+
+k8s/buildpack/spring-boot/buildpack.toml
+****
+
+[source, toml]
+----
+include::k8s/buildpack/spring-boot/buildpack.toml[]
+----
+****
+
+k8s/buildpack/syft/buildpack.toml
+****
+
+[source, toml]
+----
+include::k8s/buildpack/syft/buildpack.toml[]
+----
+****
