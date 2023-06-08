@@ -1,0 +1,6 @@
+== mongo
+
+:doctype: book
+:sourcedir: src/docs/asciidoc
+:numbered:
+

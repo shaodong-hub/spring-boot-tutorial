@@ -48,3 +48,11 @@ include::spring-boot-07-validation/README.adoc[]
 include::spring-boot-08-redis/README.adoc[]
 
 include::spring-boot-10-jpa/README.adoc[]
+
+include::spring-boot-11-mongo/README.adoc[]
+
+include::spring-boot-12-kafka/README.adoc[]
+
+include::spring-boot-13-actuator/README.adoc[]
+
+include::spring-boot-14-docker/README.adoc[]

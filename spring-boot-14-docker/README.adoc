@@ -1,0 +1,15 @@
+== DOCKER
+
+:doctype: book
+:sourcedir: src/docs/asciidoc
+:numbered:
+
+
+目前 SpringBoot 支持直接打包成 docker 镜像
+
+[source, shell]
+----
+# 打成 JAR
+mvn clean spring-boot:build-image -Dmaven.test.skip
+----
+
