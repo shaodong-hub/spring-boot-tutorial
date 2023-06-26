@@ -1,0 +1,15 @@
+@startuml
+
+box "HTTP" #LightBlue
+participant "打包服务器"
+participant "harbor"
+
+end box
+
+autonumber
+"开始打包" -> "服务器": GET /HTTP/1.1\n HOST: www.spring.io
+
+"服务器" -> "浏览器": HTTP/1.1 200OK\n Set-Cookie: a=123\n Set-Cookie: b=456
+"浏览器" -> "服务器": "GET /HTTP/1.1"\n HOST: www.spring.io\n Cookie: a=123;b=456
+@enduml
+

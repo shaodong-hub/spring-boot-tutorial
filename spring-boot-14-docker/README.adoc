@@ -4,6 +4,7 @@
 :sourcedir: src/docs/asciidoc
 :numbered:
 
+
 === 打包成镜像命令
 ****
 目前 SpringBoot 支持直接打包成 docker 镜像
@@ -19,9 +20,8 @@ mvn clean spring-boot:build-image -Dmaven.test.skip
 ****
 自动打包时需要两个镜像, 一个是构建镜像(paketobuildpacks/builder), 一个是运行镜像(paketobuildpacks/run)
 
-构建镜像类似 Jenkins, 会执行 docker build 命令.
-
-运行镜像 提供了运行时基础镜像.
+构建镜像:构建应用程序的环境(构建镜像类似 Jenkins).
+运行镜像:应用程序运行的操作系统层
 ****
 
 === 打镜像说明
@@ -51,12 +51,17 @@ mvn clean spring-boot:build-image -Dmaven.test.skip
 				<!--要使用的构建器映像的名称。默认：paketobuildpacks/builder:base-->
 				<builder>registry.cn-hangzhou.aliyuncs.com/shishaodong/paketobuildpacks_builder:0.3.261-base</builder>
 				<!-- 运行时 Image -->
-				<runImage>registry.cn-hangzhou.aliyuncs.com/shishaodong/paketobuildpacks_run:1.2.70-base-cnb</runImage>
+				<runImage>registry.cn-hangzhou.aliyuncs.com/shishaodong/paketobuildpacks_run:1.3.175-full</runImage>
 				<!--映像生成的映像的名称。-->
 				<!--suppress UnresolvedMavenProperty -->
-				<name>
-					registry.cn-hangzhou.aliyuncs.com/shishaodong/${project.artifactId}:${project.version}-${git.commit.id.abbrev}
-				</name>
+				<name>registry.cn-hangzhou.aliyuncs.com/shishaodong/${project.artifactId}:${project.version}-${git.commit.id.abbrev}</name>
+                <!-- 打出来额外的 tag -->
+                <tags>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <tag>registry.cn-hangzhou.aliyuncs.com/shishaodong/${project.artifactId}:${project.version}</tag>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <tag>registry.cn-hangzhou.aliyuncs.com/shishaodong/${project.artifactId}:${project.version}-${git.commit.id.abbrev}-LATEST</tag>
+                </tags>
 				<env>
 					<BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
 					<BPE_OVERRIDE_LANG>en_US.UTF-8</BPE_OVERRIDE_LANG>
@@ -86,6 +91,11 @@ mvn clean spring-boot:build-image -Dmaven.test.skip
 			</image>
 			<docker>
 				<tlsVerify>false</tlsVerify>
+                <publishRegistry>
+                    <url>https://hub.test.com</url>
+                    <username>robot$project+robot_name</username>
+                    <password>robot-password</password>
+                </publishRegistry>
 			</docker>
 		</configuration>
 	</plugin>
@@ -116,28 +126,29 @@ mvn clean spring-boot:build-image -Dmaven.test.skip
 ****
 配置说明
 
+[cols="^,^,^,^"]
 |===
-|选项 |说明 |可选性 |默认项
+|选项 |说明 |可选项 |默认项
 
 |builder
 |要使用的构建器映像的名称。
-|Column 3, row 1
+|可选
 |默认：paketobuildpacks/builder:base
 
 |runImage
 |运行时镜像
-|Column 3, row 2
+|可选
 |paketobuildpacks/run
 
 |name
 |打包成镜像的名称
-|Column 3, row 3
-|Column 4, row 3
+|可选
+|N/A
 
 |env
 |环境变量
-|Column 3, row 4
-|Column 4, row 4
+|可选
+|N/A
 
 |pullPolicy
 |拉取镜像策略
@@ -161,13 +172,18 @@ mvn clean spring-boot:build-image -Dmaven.test.skip
 
 |binding
 |替换 builder 镜像里的文件
-|Column 3, row 9
-|Column 4, row 9
+|可选
+|见 builder
 
 |tlsVerify
-|Column 2, row 10
-|Column 3, row 10
-|Column 4, row 10
+|远程 harbor 自签 ssl 证书是否验证
+|true,false
+|false
+
+|publishRegistry
+|发布 docker image 的 harbor 地址
+|N/A
+|N/A
 |===
 ****
 
@@ -197,3 +213,13 @@ k8s/buildpack/syft/buildpack.toml
 include::k8s/buildpack/syft/buildpack.toml[]
 ----
 ****
+
+https://github.com/paketo-buildpacks[Paketo Buildpacks]
+
+https://github.com/paketo-buildpacks/base-builder[base-builder]
+
+https://github.com/paketo-buildpacks/syft/blob/main/buildpack.toml[syft]
+
+https://github.com/paketo-buildpacks/spring-boot/blob/main/buildpack.toml[spring-boot]
+
+https://github.com/paketo-buildpacks/bellsoft-liberica/blob/main/buildpack.toml[bellsoft-liberica]
