@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/index"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "index.index.index"
+  }
+}

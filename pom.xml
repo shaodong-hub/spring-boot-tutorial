@@ -35,6 +35,7 @@
         <module>spring-boot-12-kafka</module>
         <module>spring-boot-13-actuator</module>
         <module>spring-boot-14-docker</module>
+        <module>spring-cloud-01-feign</module>
     </modules>
 
     <properties>
